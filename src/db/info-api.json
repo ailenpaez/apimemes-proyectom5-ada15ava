@@ -2,6 +2,7 @@
   "version": "1.0.0",
   "author": "paezailen",
   "country": "Argentina",
+  "description": "API for managing memes and users, allowing CRUD operations on both types of data.",
   "paths": {
     "info": "/api"
   }
