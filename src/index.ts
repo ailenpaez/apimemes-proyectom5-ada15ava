@@ -1,9 +1,12 @@
+// INDEX:
 import express from "express";
+import dotenv from "dotenv";
+dotenv.config();
 import info from "../src/db/info-api.json"
 
 const app = express();
 
-const PORT = process.env.PORT || 1947;
+const PORT = process.env.BASE_PORT!;
 
 
 app.get("/api", (req, res) => {
