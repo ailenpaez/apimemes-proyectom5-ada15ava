@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Meme de Programación",
+    "categories": ["Tecnología", "Programación", "Humor"],
+    "author": "Usuario1",
+    "imageUrl": "https://ejemplo.com/meme1.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Meme de Café",
+    "categories": ["Café", "Humor", "Día a día"],
+    "author": "Usuario2",
+    "imageUrl": "https://ejemplo.com/meme2.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Meme de Gato",
+    "categories": ["Animales", "Humor", "Gatos"],
+    "author": "Usuario3",
+    "imageUrl": "https://ejemplo.com/meme3.jpg"
+  }
+]
