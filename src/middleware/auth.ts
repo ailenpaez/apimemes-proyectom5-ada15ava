@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import users from "../db/users.json";
 
-const validator = (req: Request, res: Response, next: NextFunction) => {
+const validatorAuth = (req: Request, res: Response, next: NextFunction) => {
   const { token } = req.body;
 
   const exists = users.find((u) => u.token === token);
@@ -10,4 +10,4 @@ const validator = (req: Request, res: Response, next: NextFunction) => {
   next();
 };
 
-export { validator };
+export { validatorAuth };
