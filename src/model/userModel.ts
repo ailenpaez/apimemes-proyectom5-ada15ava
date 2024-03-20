@@ -4,9 +4,11 @@ import crypto from "crypto";
 import { dirname } from "../db/dirname";
 
 abstract class UserModel {
-  
-  private static findUser(username: string){ //case sensitive
-    return users.find((user) => user.username.toLowerCase() === username.toLowerCase());
+  private static findUser(username: string) {
+    //case sensitive
+    return users.find(
+      (user) => user.username.toLowerCase() === username.toLowerCase()
+    );
   }
 
   static async getAllUsers() {
@@ -17,7 +19,7 @@ abstract class UserModel {
     return mappedUsers;
   }
 
-  static async readUserByUsername(username: string) {  
+  static async readUserByUsername(username: string) {
     const user = this.findUser(username);
 
     if (!user) {
@@ -26,6 +28,8 @@ abstract class UserModel {
     const { token, password, ...shortInfo } = user;
     return shortInfo;
   }
+
+  static async createUSer (){}
 }
 
 export { UserModel };
