@@ -3,14 +3,14 @@ import { UserModel } from "../model/userModel";
 import crypto from "crypto";
 
 abstract class UserController {
-  private static getAllUsers = async (req: Request, res: Response) => {
+  public static getAllUsers = async (req: Request, res: Response) => {
     const data = await UserModel.getAllUsers();
     res.json(data);
   };
 
-  private static readUserByEmail = async (req: Request, res: Response) => {
-    const email = req.params.email;
-    const user = await UserModel.readUserByEmail(email);
+  public static readUserByUsername = async (req: Request, res: Response) => {
+    const username = req.params.username; 
+    const user = await UserModel.readUserByUsername(username);
     if ("error" in user) {
       res.status(404).json(user);
     } else {

@@ -4,6 +4,11 @@ import crypto from "crypto";
 import { dirname } from "../db/dirname";
 
 abstract class UserModel {
+  
+  private static findUser(username: string){ //case sensitive
+    return users.find((user) => user.username.toLowerCase() === username.toLowerCase());
+  }
+
   static async getAllUsers() {
     const mappedUsers: any = users.map((users) => {
       const { token, password, ...mappedUsers } = users; // destructuring, los ... -> operador de propagación (ADJUNTA PROP QUE SE)
@@ -12,8 +17,9 @@ abstract class UserModel {
     return mappedUsers;
   }
 
-  static async readUserByEmail(email: string) {
-    const user = users.find((user) => user.mail === email);
+  static async readUserByUsername(username: string) {  
+    const user = this.findUser(username);
+
     if (!user) {
       return { error: "USER_NOT_FOUND!" };
     }

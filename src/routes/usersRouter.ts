@@ -6,8 +6,8 @@ const usersRouter = Router();
 
 // users
 
-usersRouter.get("/list", validatorAuth, UserController.getAllUsers); //! LISTO
-usersRouter.get("/:email", validatorAuth, UserController.readUserByEmail); //! LISTO
+usersRouter.get("/", validatorAuth, UserController.getAllUsers); //! LISTO
+usersRouter.get("/:username", validatorAuth, UserController.readUserByUsername); //! LISTO
 usersRouter.post("/register"); // create (register) - createUser - POST
 usersRouter.post("/login"); // create (login) - login - POST
 usersRouter.patch("/:username", validatorAuth); // update - updateUser - NECESITA LOGGEARSE - PATCH

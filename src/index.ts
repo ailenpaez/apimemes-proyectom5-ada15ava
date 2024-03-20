@@ -18,7 +18,7 @@ app.get("/api", (req, res) => {
   res.json(info);
 });
 
-app.use("/api", usersRouter);
+app.use("/api/users", usersRouter);
 
 app.listen(PORT, () => {
   console.log(`Server listening on port http://localhost:${PORT}`);
