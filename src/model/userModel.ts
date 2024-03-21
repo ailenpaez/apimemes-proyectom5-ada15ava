@@ -107,6 +107,21 @@ abstract class UserModel {
     return updatedUser.username;
   }
 
+  static async logout(username: string) {
+    const user = this.findUser(username);
+
+    if (!user) return 404;
+
+    user.token = "";
+
+    try {
+      await this.writeDbUser();
+      return { message: "USER_LOGOUT!" };
+    } catch (error) {
+      console.error("ERROR_WRITING_FILE:", error);
+      return 500;
+    }
+  }
 }
 
 export { UserModel };

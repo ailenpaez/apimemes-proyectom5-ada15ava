@@ -82,14 +82,17 @@ abstract class UserController {
 
     res.json({ message: "USER_UPDATED_SUCCESSFULLY!.", username: result });
   };
-}
 
-// {
-//   "mail": "usuario1@ejemplo.com",
-//   "username": "Usuario1",
-//   "password": "hashedPassword1",
-//   "token": "token123",
-//   "interests": ["Tecnología", "Programación", "Humor"]
-// }
+  public static async logout(req: Request, res: Response) {
+    const { username } = req.body;
+
+    const result = await UserModel.logout(username);
+    if (result === 404) {
+      return res.status(404).json({ error: "USER_NOT_FOUND" });
+    }
+
+    res.status(201).json(result);
+  }
+}
 
 export { UserController };

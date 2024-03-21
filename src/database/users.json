@@ -45,7 +45,7 @@
     "mail": "usuario1@ejemplo.com",
     "username": "simontelat",
     "password": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
-    "token": "5555555",
+    "token": "",
     "interests": ["test1", "test2", "test3"]
   },
   {
@@ -59,7 +59,7 @@
     "mail": "ailenpaez@ejemplo.com",
     "username": "paezailenj",
     "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
-    "token": "5fc549e5-d484-425d-a5b9-77668dcfb6c3",
+    "token": "",
     "interests": ["Tecnología", "Programación", "Humor"]
   },
   {
@@ -75,5 +75,12 @@
     "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
     "token": "",
     "interests": ["Tecnología", "Programación", "Humor"]
+  },
+  {
+    "mail": "test1@mail.com",
+    "username": "testnro1",
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "token": "",
+    "interests": ["animales", "niños", "Humor"]
   }
 ]

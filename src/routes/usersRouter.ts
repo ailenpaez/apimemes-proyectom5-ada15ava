@@ -11,7 +11,7 @@ usersRouter.get("/:username", validatorAuth, UserController.readUserByUsername);
 usersRouter.post("/register", UserController.createNewUser); //! LISTO
 usersRouter.post("/login", UserController.login); //! LISTO
 usersRouter.patch("/:username", validatorAuth, UserController.updateUser); //^ LISTO?
-usersRouter.delete("/logout", validatorAuth); //delete - (deloggear) - logout - NECESITA LOGGEARSE - DELETE
+usersRouter.delete("/logout", validatorAuth, UserController.logout); //^ LISTO
 usersRouter.delete("/:username", validatorAuth); //delete - deleteUser - NECESITA LOGGEARSE - DELETE
 
 export default usersRouter;
