@@ -93,6 +93,17 @@ abstract class UserController {
 
     res.status(201).json(result);
   }
+
+  public static async deleteUser(req: Request, res: Response) {
+    const { username } = req.body;
+
+    const result = await UserModel.deleteUser(username);
+    if (result === 404) {
+      return res.status(404).json({ error: "USER_NOT_FOUND" });
+    }
+
+    res.status(200).json(result);
+  }
 }
 
 export { UserController };

@@ -122,6 +122,27 @@ abstract class UserModel {
       return 500;
     }
   }
+
+  static async deleteUser(username: string) {
+    const user = this.findUser(username);
+   
+    if (!user) return 404; 
+   
+    const deletedUser = users.filter(user => user.username !== username);
+   
+    try {
+       await this.writeAndDelete(deletedUser);
+       return { message: "USER_DELETED!" };
+    } catch (error) {
+       console.error("ERROR_WRITING_FILE:", error);
+       return 500; 
+    }
+   }
+   //ESTA FC ES PARA ESCRIBIR NUEVAMENTE LA DB, NO ME FUNCIONÓ CON LA DE ARRIBA.
+   private static async writeAndDelete(updatedUsers: any[]) {
+    return writeFile(dirname + "/users.json", updatedUsers);
+   }
+   
 }
 
 export { UserModel };

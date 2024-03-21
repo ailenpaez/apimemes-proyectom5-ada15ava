@@ -7,13 +7,6 @@
     "interests": ["test1", "test2", "test3"]
   },
   {
-    "mail": "usuario5@ejemplo.com",
-    "username": "Usuario5",
-    "password": "d3fa01281e1b21eff1c9669f3a5631d38c446d21da3608d506e79c90d5f2b40b",
-    "token": "2222",
-    "interests": []
-  },
-  {
     "mail": "usuario17@ejemplo.com",
     "username": "Usuario17",
     "password": "d3fa01281e1b21eff1c9669f3a5631d38c446d21da3608d506e79c90d5f2b40b",
@@ -26,13 +19,6 @@
     "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
     "token": "",
     "interests": ["ani", "pelis", "test"]
-  },
-  {
-    "mail": "clarasimon@gmail.com",
-    "username": "clara23",
-    "password": "fef3d83e32b4d981b0c0f75206e891268c6aa8bd8db5a315db7bf24168a4be27",
-    "token": "ffffffffffff5",
-    "interests": ["gatos", "niños", "plantas"]
   },
   {
     "mail": "claras@ejemplo.com",
