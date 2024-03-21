@@ -38,12 +38,12 @@ abstract class UserController {
     });
 
     if (response === 409) {
-      return res.status(409).json({ error: "USER_EXSISTS!" });
+      return res.status(409).json({ error: "USER_EXSISTS👀!" });
     }
 
     res
       .status(201)
-      .json({ message: "USER_CREATED_SUCCESSFULLY!", username: response });
+      .json({ message: "USER_CREATED_SUCCESSFULLY👌🏽!", username: response });
   };
 
   public static login = async (req: Request, res: Response) => {

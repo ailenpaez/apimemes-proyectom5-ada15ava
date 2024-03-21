@@ -28,7 +28,7 @@ abstract class UserModel {
     const user = this.findUser(username);
 
     if (!user) {
-      return { error: "USER_NOT_FOUND!" };
+      return { error: "USER_NOT_FOUND🤷🏻!" };
     }
     const { token, password, ...shortInfo } = user;
     return shortInfo;
