@@ -26,5 +26,33 @@
     "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
     "token": "",
     "interests": []
+  },
+  {
+    "mail": "clarasimon@ejemplo.com",
+    "username": "clarisim",
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "token": "",
+    "interests": ["gatos", "animales", "Humor"]
+  },
+  {
+    "mail": "claras@ejemplo.com",
+    "username": "clarita",
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "token": "",
+    "interests": ["gatos", "animales", "Humor"]
+  },
+  {
+    "mail": "simontela@ejemplo.com",
+    "username": "simontelat",
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "token": "",
+    "interests": ["Tecnología", "Programación", "Humor"]
+  },
+  {
+    "mail": "prueba@ejemplo.com",
+    "username": "prueba123",
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "token": "",
+    "interests": ["Tecnología", "Programación", "Humor"]
   }
 ]

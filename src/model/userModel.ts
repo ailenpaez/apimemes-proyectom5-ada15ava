@@ -4,7 +4,6 @@ import crypto from "crypto";
 import { dirname } from "../database/dirname";
 import jsonfile from "jsonfile";
 
-
 abstract class UserModel {
   private static findUser(username: string) {
     //case sensitive
@@ -35,31 +34,27 @@ abstract class UserModel {
     return shortInfo;
   }
 
-  static async createNewUser (dataUser: any){
+  static async createNewUser(dataUser: any) {
+    const { mail, username, hashedPass, interests } = dataUser;
 
-    const {mail, username, hashedPass} = dataUser;
+    const userInterests = interests ?? [];
+    const newUser = {
+      mail,
+      username,
+      password: hashedPass,
+      token: "",
+      interests: userInterests,
+    };
 
-    const newUser = {mail, username, password: hashedPass , token: "", interests:[]}
-
-    const user = this.findUser(username)
+    const user = this.findUser(username);
 
     if (user) return 409;
-    users.push(newUser)
+    users.push(newUser);
 
     await this.writeDbUser();
 
-    return newUser.username
+    return newUser.username;
   }
-
-
 }
-
-// {
-//   "mail": "usuario1@ejemplo.com",
-//   "username": "Usuario1",
-//   "password": "hashedPassword1",
-//   "token": "token123",
-//   "interests": ["Tecnología", "Programación", "Humor"]
-// }
 
 export { UserModel };
