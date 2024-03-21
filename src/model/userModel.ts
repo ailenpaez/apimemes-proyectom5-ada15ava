@@ -1,7 +1,9 @@
-import users from "../db/users.json";
+import users from "../database/users.json";
 import { writeFile } from "jsonfile";
 import crypto from "crypto";
-import { dirname } from "../db/dirname";
+import { dirname } from "../database/dirname";
+import jsonfile from "jsonfile";
+
 
 abstract class UserModel {
   private static findUser(username: string) {
@@ -9,6 +11,10 @@ abstract class UserModel {
     return users.find(
       (user) => user.username.toLowerCase() === username.toLowerCase()
     );
+  }
+
+  private static async writeDbUser() {
+    return writeFile(dirname + "/users.json", users);
   }
 
   static async getAllUsers() {
@@ -29,7 +35,31 @@ abstract class UserModel {
     return shortInfo;
   }
 
-  static async createUSer (){}
+  static async createNewUser (dataUser: any){
+
+    const {mail, username, hashedPass} = dataUser;
+
+    const newUser = {mail, username, password: hashedPass , token: "", interests:[]}
+
+    const user = this.findUser(username)
+
+    if (user) return 409;
+    users.push(newUser)
+
+    await this.writeDbUser();
+
+    return newUser.username
+  }
+
+
 }
+
+// {
+//   "mail": "usuario1@ejemplo.com",
+//   "username": "Usuario1",
+//   "password": "hashedPassword1",
+//   "token": "token123",
+//   "interests": ["Tecnología", "Programación", "Humor"]
+// }
 
 export { UserModel };

@@ -1,0 +1,30 @@
+[
+  {
+    "mail": "usuario1@ejemplo.com",
+    "username": "Usuario1",
+    "password": "hashedPassword1",
+    "token": "token123",
+    "interests": ["Tecnología", "Programación", "Humor"]
+  },
+  {
+    "mail": "usuario5@ejemplo.com",
+    "username": "Usuario5",
+    "password": "d3fa01281e1b21eff1c9669f3a5631d38c446d21da3608d506e79c90d5f2b40b",
+    "token": "",
+    "interests": []
+  },
+  {
+    "mail": "usuario17@ejemplo.com",
+    "username": "Usuario17",
+    "password": "d3fa01281e1b21eff1c9669f3a5631d38c446d21da3608d506e79c90d5f2b40b",
+    "token": "",
+    "interests": []
+  },
+  {
+    "mail": "ailenpaez34@ejemplo.com",
+    "username": "ailenpaez",
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "token": "",
+    "interests": []
+  }
+]

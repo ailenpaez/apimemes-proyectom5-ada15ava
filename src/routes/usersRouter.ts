@@ -8,7 +8,7 @@ const usersRouter = Router();
 
 usersRouter.get("/", validatorAuth, UserController.getAllUsers); //! LISTO
 usersRouter.get("/:username", validatorAuth, UserController.readUserByUsername); //! LISTO
-usersRouter.post("/register"); // create (register) - createUser - POST
+usersRouter.post("/register", UserController.createNewUser); // create (register) - createUser - POST
 usersRouter.post("/login"); // create (login) - login - POST
 usersRouter.patch("/:username", validatorAuth); // update - updateUser - NECESITA LOGGEARSE - PATCH
 usersRouter.delete("/:username", validatorAuth); //delete - deleteUser - NECESITA LOGGEARSE - DELETE

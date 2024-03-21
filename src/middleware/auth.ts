@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import users from "../db/users.json";
+import users from "../database/users.json";
 
 const validatorAuth = (req: Request, res: Response, next: NextFunction) => {
 
@@ -10,5 +10,6 @@ const validatorAuth = (req: Request, res: Response, next: NextFunction) => {
 
   next();
 };
+
 
 export { validatorAuth };

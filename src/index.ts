@@ -3,7 +3,7 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 dotenv.config();
-import info from "../src/db/info-api.json";
+import info from "../src/database/info-api.json";
 import usersRouter from "./routes/usersRouter";
 
 const app = express();
