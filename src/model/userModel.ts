@@ -55,6 +55,28 @@ abstract class UserModel {
 
     return newUser.username;
   }
+
+  static async login(userData: any) {
+    const { username, password } = userData;
+
+    const userFound = this.findUser(username);
+
+    if (!userFound) return 404;
+
+    const hashPassword = crypto
+      .createHash("sha256")
+      .update(password)
+      .digest("hex");
+
+    if (userFound.password !== hashPassword) return 400;
+
+    const token = crypto.randomUUID();
+
+    userFound.token = token;
+    await this.writeDbUser();
+
+    return token;
+  }
 }
 
 export { UserModel };

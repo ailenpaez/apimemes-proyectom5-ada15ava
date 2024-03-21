@@ -1,7 +1,7 @@
-import { Request, Response, response } from "express";
+import { Request, Response } from "express";
 import { UserModel } from "../model/userModel";
 import crypto from "crypto";
-import { validateUser } from "../validators/usersValidator";
+import { validateUser, validatePartialUser } from "../validators/usersValidator";
 
 abstract class UserController {
   public static getAllUsers = async (req: Request, res: Response) => {
@@ -34,7 +34,7 @@ abstract class UserController {
       mail,
       username,
       hashedPass,
-      interests
+      interests,
     });
 
     if (response === 409) {
@@ -46,6 +46,25 @@ abstract class UserController {
       .json({ message: "USER_CREATED_SUCCESSFULLY!", username: response });
   };
 
+  public static login = async (req: Request, res: Response) => {
+    const validate = validatePartialUser(req.body);
+
+    if (!validate.success)
+      return res.status(400).json({ error: "USERNAME_OR_PASSWORD_INCORRECT!🚩" });
+
+    const userLogged = await UserModel.login(req.body);
+
+    if (userLogged === 400)
+      return res.status(400).json({ error: "BAD_REQUEST..👎🏽" });
+
+    if (userLogged === 404)
+      return res.status(400).json({ error: "NOT_FOUND_USER🤨" });
+
+    res
+      .status(201)
+      .json({ message: "USER_LOGGED_SUCCESSFULLY!👍🏽", token: userLogged })
+      .end()
+  };
 }
 
 // {
