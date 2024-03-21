@@ -1,7 +1,10 @@
 import { Request, Response } from "express";
 import { UserModel } from "../model/userModel";
 import crypto from "crypto";
-import { validateUser, validatePartialUser } from "../validators/usersValidator";
+import {
+  validateUser,
+  validatePartialUser,
+} from "../validators/usersValidator";
 
 abstract class UserController {
   public static getAllUsers = async (req: Request, res: Response) => {
@@ -50,7 +53,9 @@ abstract class UserController {
     const validate = validatePartialUser(req.body);
 
     if (!validate.success)
-      return res.status(400).json({ error: "USERNAME_OR_PASSWORD_INCORRECT!🚩" });
+      return res
+        .status(400)
+        .json({ error: "USERNAME_OR_PASSWORD_INCORRECT!🚩" });
 
     const userLogged = await UserModel.login(req.body);
 
@@ -63,7 +68,19 @@ abstract class UserController {
     res
       .status(201)
       .json({ message: "USER_LOGGED_SUCCESSFULLY!👍🏽", token: userLogged })
-      .end()
+      .end();
+  };
+
+  public static updateUser = async (req: Request, res: Response) => {
+    const username = req.params.username;
+    const updateData = req.body;
+
+    const result = await UserModel.updateUser(username, updateData);
+    if (result === 404) {
+      return res.status(404).json({ error: "USER_NOT_FOUND!" });
+    }
+
+    res.json({ message: "USER_UPDATED_SUCCESSFULLY!.", username: result });
   };
 }
 

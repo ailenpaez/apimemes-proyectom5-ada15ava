@@ -77,6 +77,36 @@ abstract class UserModel {
 
     return token;
   }
+
+  static async updateUser(username: string, updateData: any) {
+    const user = this.findUser(username);
+    if (!user) return 404;
+
+    const updatedUser = {
+      ...user,
+      ...Object.fromEntries(
+        Object.entries(updateData).filter(
+          ([key]) => user.hasOwnProperty(key) && key !== "token"
+        )
+      ),
+    };
+
+    if (updateData.password) {
+      updatedUser.password = crypto
+        .createHash("sha256")
+        .update(updateData.password)
+        .digest("hex");
+    }
+
+    const userIndex = users.findIndex((user) => user.username === username);
+    if (userIndex !== -1) {
+      users[userIndex] = updatedUser;
+    }
+
+    await this.writeDbUser();
+    return updatedUser.username;
+  }
+
 }
 
 export { UserModel };

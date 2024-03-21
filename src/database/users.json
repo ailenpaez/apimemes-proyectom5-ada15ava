@@ -1,1 +1,79 @@
-[{"mail":"usuario1@ejemplo.com","username":"Usuario1","password":"hashedPassword1","token":"token123","interests":["Tecnología","Programación","Humor"]},{"mail":"usuario5@ejemplo.com","username":"Usuario5","password":"d3fa01281e1b21eff1c9669f3a5631d38c446d21da3608d506e79c90d5f2b40b","token":"2222","interests":[]},{"mail":"usuario17@ejemplo.com","username":"Usuario17","password":"d3fa01281e1b21eff1c9669f3a5631d38c446d21da3608d506e79c90d5f2b40b","token":"","interests":[]},{"mail":"ailenpaez34@ejemplo.com","username":"ailenpaez","password":"ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f","token":"","interests":[]},{"mail":"clarasimon@ejemplo.com","username":"clarisim","password":"ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f","token":"","interests":["gatos","animales","Humor"]},{"mail":"claras@ejemplo.com","username":"clarita","password":"ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f","token":"","interests":["gatos","animales","Humor"]},{"mail":"simontela@ejemplo.com","username":"simontelat","password":"ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f","token":"","interests":["Tecnología","Programación","Humor"]},{"mail":"prueba@ejemplo.com","username":"prueba123","password":"ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f","token":"","interests":["Tecnología","Programación","Humor"]},{"mail":"ailenpaez@ejemplo.com","username":"paezailenj","password":"ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f","token":"5fc549e5-d484-425d-a5b9-77668dcfb6c3","interests":["Tecnología","Programación","Humor"]},{"mail":"marolio@ejemplo.com","username":"mariolio","password":"ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f","token":"498fc763-ead6-4e54-8c73-054963d758c9","interests":["animales","peliculas","Humor"]},{"mail":"ailenpaez@ejemplo.com","username":"pailenj","password":"ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f","token":"","interests":["Tecnología","Programación","Humor"]}]
+[
+  {
+    "mail": "usuario1@ejemplo.com",
+    "username": "Usuario1",
+    "password": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+    "token": "token123",
+    "interests": ["test1", "test2", "test3"]
+  },
+  {
+    "mail": "usuario5@ejemplo.com",
+    "username": "Usuario5",
+    "password": "d3fa01281e1b21eff1c9669f3a5631d38c446d21da3608d506e79c90d5f2b40b",
+    "token": "2222",
+    "interests": []
+  },
+  {
+    "mail": "usuario17@ejemplo.com",
+    "username": "Usuario17",
+    "password": "d3fa01281e1b21eff1c9669f3a5631d38c446d21da3608d506e79c90d5f2b40b",
+    "token": "",
+    "interests": []
+  },
+  {
+    "mail": "ailenpaez34@ejemplo.com",
+    "username": "ailenpaez",
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "token": "",
+    "interests": ["ani", "pelis", "test"]
+  },
+  {
+    "mail": "clarasimon@gmail.com",
+    "username": "clara23",
+    "password": "fef3d83e32b4d981b0c0f75206e891268c6aa8bd8db5a315db7bf24168a4be27",
+    "token": "ffffffffffff5",
+    "interests": ["gatos", "niños", "plantas"]
+  },
+  {
+    "mail": "claras@ejemplo.com",
+    "username": "clarita",
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "token": "",
+    "interests": ["gatos", "animales", "Humor"]
+  },
+  {
+    "mail": "usuario1@ejemplo.com",
+    "username": "simontelat",
+    "password": "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92",
+    "token": "5555555",
+    "interests": ["test1", "test2", "test3"]
+  },
+  {
+    "mail": "prueba@ejemplo.com",
+    "username": "prueba123",
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "token": "",
+    "interests": ["Tecnología", "Programación", "Humor"]
+  },
+  {
+    "mail": "ailenpaez@ejemplo.com",
+    "username": "paezailenj",
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "token": "5fc549e5-d484-425d-a5b9-77668dcfb6c3",
+    "interests": ["Tecnología", "Programación", "Humor"]
+  },
+  {
+    "mail": "marolio@ejemplo.com",
+    "username": "mariolio",
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "token": "498fc763-ead6-4e54-8c73-054963d758c9",
+    "interests": ["animales", "peliculas", "Humor"]
+  },
+  {
+    "mail": "ailenpaez@ejemplo.com",
+    "username": "pailenj",
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "token": "",
+    "interests": ["Tecnología", "Programación", "Humor"]
+  }
+]
