@@ -91,13 +91,9 @@ abstract class UserModel {
 
     user.token = "";
 
-    try {
-      await this.writeDbUser();
-      return { message: "USER_LOGOUT!" };
-    } catch (error) {
-      console.error("ERROR_WRITING_FILE:", error);
-      return 500;
-    }
+    await this.writeDbUser();
+
+    return { message: "USER_LOGOUT!" };
   }
 
   static async deleteUser(username: string) {
