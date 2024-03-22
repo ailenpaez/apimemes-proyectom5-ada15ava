@@ -16,6 +16,10 @@ abstract class UserModel {
     return writeFile(dirname + "/users.json", users);
   }
 
+  private static async updateUsers(updateOrDelete: any[]) {
+    return writeFile(dirname + "/users.json", updateOrDelete);
+  }
+
   static async getAllUsers() {
     const mappedUsers: any = users.map((users) => {
       const { token, password, ...mappedUsers } = users; // destructuring, los ... -> operador de propagación (ADJUNTA PROP QUE SE)
@@ -78,34 +82,7 @@ abstract class UserModel {
     return token;
   }
 
-  static async updateUser(username: string, updateData: any) {
-    const user = this.findUser(username);
-    if (!user) return 404;
-
-    const updatedUser = {
-      ...user,
-      ...Object.fromEntries(
-        Object.entries(updateData).filter(
-          ([key]) => user.hasOwnProperty(key) && key !== "token"
-        )
-      ),
-    };
-
-    if (updateData.password) {
-      updatedUser.password = crypto
-        .createHash("sha256")
-        .update(updateData.password)
-        .digest("hex");
-    }
-
-    const userIndex = users.findIndex((user) => user.username === username);
-    if (userIndex !== -1) {
-      users[userIndex] = updatedUser;
-    }
-
-    await this.writeDbUser();
-    return updatedUser.username;
-  }
+  // static async updateUser() {}
 
   static async logout(username: string) {
     const user = this.findUser(username);
@@ -125,24 +102,15 @@ abstract class UserModel {
 
   static async deleteUser(username: string) {
     const user = this.findUser(username);
-   
-    if (!user) return 404; 
-   
-    const deletedUser = users.filter(user => user.username !== username);
-   
-    try {
-       await this.writeAndDelete(deletedUser);
-       return { message: "USER_DELETED!" };
-    } catch (error) {
-       console.error("ERROR_WRITING_FILE:", error);
-       return 500; 
-    }
-   }
-   //ESTA FC ES PARA ESCRIBIR NUEVAMENTE LA DB, NO ME FUNCIONÓ CON LA DE ARRIBA.
-   private static async writeAndDelete(updatedUsers: any[]) {
-    return writeFile(dirname + "/users.json", updatedUsers);
-   }
-   
+
+    if (!user) return 404;
+
+    const deleteUser = users.filter((user) => user.username !== username);
+
+    await this.updateUsers(deleteUser);
+
+    return { message: "USER_DELETED_SUCCESSFULLY!" };
+  }
 }
 
 export { UserModel };

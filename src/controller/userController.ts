@@ -71,17 +71,7 @@ abstract class UserController {
       .end();
   };
 
-  public static updateUser = async (req: Request, res: Response) => {
-    const username = req.params.username;
-    const updateData = req.body;
-
-    const result = await UserModel.updateUser(username, updateData);
-    if (result === 404) {
-      return res.status(404).json({ error: "USER_NOT_FOUND!" });
-    }
-
-    res.json({ message: "USER_UPDATED_SUCCESSFULLY!.", username: result });
-  };
+  // public static updateUser = async (req: Request, res: Response) => {};
 
   public static async logout(req: Request, res: Response) {
     const { username } = req.body;
@@ -95,14 +85,13 @@ abstract class UserController {
   }
 
   public static async deleteUser(req: Request, res: Response) {
-    const { username } = req.body;
+    const {username} = req.params;
 
-    const result = await UserModel.deleteUser(username);
-    if (result === 404) {
-      return res.status(404).json({ error: "USER_NOT_FOUND" });
-    }
+    const response = await UserModel.deleteUser(username);
 
-    res.status(200).json(result);
+    res.status(200).json(response);
+
+
   }
 }
 
