@@ -82,7 +82,25 @@ abstract class UserModel {
     return token;
   }
 
-  // static async updateUser() {}
+  static async updateUser(userData: any) {
+    const {mail, username, password,interests, usernameParam} = userData;
+    
+    const userFound = this.findUser(usernameParam);
+
+    if(!userFound) return {error:"USER_NOT_FOUND!"}
+
+    if(mail) userFound.mail = mail;
+    if(username) userFound.username = username;
+    if(password) userFound.password = password;
+    if(interests) userFound.interests = interests;
+
+    await this.writeDbUser()
+    return {
+      message: "USER_UPDATE_SUCCESSFULLY",
+      user: {email: userFound.mail, username: userFound.username}
+    }
+
+  }
 
   static async logout(username: string) {
     const user = this.findUser(username);

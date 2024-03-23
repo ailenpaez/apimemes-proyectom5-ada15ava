@@ -24,7 +24,7 @@ abstract class UserController {
 
   public static createNewUser = async (req: Request, res: Response) => {
     const validate = validateUser(req.body);
-    if (!validate.success) return res.status(400).json({ error: "VALIDATE!" });
+    if (!validate.success) return res.status(400).json({ error: "BAD_REQUEST" });
 
     const { mail, username, password, interests } = req.body;
 
@@ -71,7 +71,24 @@ abstract class UserController {
       .end();
   };
 
-  // public static updateUser = async (req: Request, res: Response) => {};
+  public static updateUser = async (req: Request, res: Response) => {
+    const validate = validatePartialUser(req.body);
+
+    if(!validate.success) return res.status(400).json({ error: validate.error })
+
+    const usernameParam = req.params.username
+
+    if(req.body.password) req.body.password =  crypto.createHash("sha256").update(req.body.password).digest("hex");
+
+    const userData = {usernameParam, ...req.body}
+
+    const response = await UserModel.updateUser(userData);
+
+    if(response.error) return res.status(400).json(response);
+
+    res.status(201).json(response);
+
+  };
 
   public static async logout(req: Request, res: Response) {
     const { username } = req.body;

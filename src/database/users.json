@@ -68,5 +68,12 @@
     "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
     "token": "",
     "interests": ["animales", "niños", "Humor"]
+  },
+  {
+    "mail": "alejandrojtelatnik@gmail.com",
+    "username": "aletela",
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "token": "ecda0680-3b50-40d3-a5fc-3cab1e6af87f",
+    "interests": ["animales", "niños", "Humor"]
   }
 ]
