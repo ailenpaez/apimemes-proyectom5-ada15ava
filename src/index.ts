@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 dotenv.config();
 import info from "../src/database/info-api.json";
 import usersRouter from "./routes/usersRouter";
+import memesRouter from "./routes/memesRouter";
 
 const app = express();
 
@@ -19,6 +20,7 @@ app.get("/api", (req, res) => {
 });
 
 app.use("/api/users", usersRouter);
+app.use("/api/memes", memesRouter);
 
 app.listen(PORT, () => {
   console.log(`Server listening on port http://localhost:${PORT}`);

@@ -1,0 +1,29 @@
+import memes from "../database/memes.json";
+import { writeFile } from "jsonfile";
+import { dirname } from "../database/dirname";
+import crypto from "crypto";
+import jsonfile from "jsonfile";
+
+abstract class MemesModel {
+  private static findMeme(id: string) {
+    return memes.find((meme) => meme.id === id);
+  }
+
+  private static async writeDbMemes() {
+    return writeFile(dirname + "/memes.json", memes);
+  }
+
+  private static async updateMemes(updateOrDeleteMeme: any[]) {
+    return writeFile(dirname + "/memes.json", updateOrDeleteMeme);
+  }
+
+  static async getAllMemes() {
+    const mappedMemes: any = memes.map((memes) => {
+      const { likes, dislikes, ...mappedMemes } = memes;
+      return mappedMemes;
+    });
+    return mappedMemes;
+  }
+}
+
+export { MemesModel };
