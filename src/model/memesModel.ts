@@ -79,6 +79,18 @@ abstract class MemesModel {
       user: { name: memeFound.name, imageUrl: memeFound.imageUrl },
     };
   }
+
+  static async deleteMeme(id: string) {
+    const meme = this.findMeme(id);
+
+    if (!meme) return 404;
+
+    const deleteMeme = memes.filter((meme) => meme.id !== id);
+
+    await this.updateMemes(deleteMeme);
+
+    return { message: "MEME_DELETED_SUCCESSFULLY!" };
+  }
 }
 export { MemesModel };
 

@@ -107,8 +107,6 @@ abstract class UserController {
     const response = await UserModel.deleteUser(username);
 
     res.status(200).json(response);
-
-
   }
 }
 

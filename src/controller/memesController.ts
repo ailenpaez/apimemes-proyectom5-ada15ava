@@ -57,7 +57,8 @@ abstract class MemesController {
     async (req: Request, res: Response) => {
       const validate = validatePartialMeme(req.body);
 
-      if (!validate.success) return res.status(404).json({ error: validate.error });
+      if (!validate.success)
+        return res.status(404).json({ error: validate.error });
 
       const memeData = { memesParams: req.body.id, ...req.body };
       const response = await MemesModel.updateMeme(memeData);
@@ -68,6 +69,16 @@ abstract class MemesController {
     },
   ];
 
+  public static deleteMeme = [
+    validatorAuth,
+    async (req: Request, res: Response) => {
+      const { id } = req.params;
+
+      const response = await MemesModel.deleteMeme(id);
+
+      res.status(200).json(response);
+    },
+  ];
 }
 
 export { MemesController };

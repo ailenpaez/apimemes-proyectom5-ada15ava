@@ -1,14 +1,5 @@
 [
   {
-    "id": "10",
-    "name": "Meme de Programación",
-    "categories": ["Tecnología", "Programación", "Humor"],
-    "author": "Usuario1",
-    "imageUrl": "https://i.pinimg.com/1200x/61/e7/8b/61e78b38b7ba772166c4927d56dbb27f.jpg",
-    "likes": "",
-    "dislikes": ""
-  },
-  {
     "id": "2",
     "name": "Meme de Café",
     "categories": ["Café", "Humor", "Día a día"],
@@ -31,32 +22,6 @@
     "name": "Rare Cat",
     "categories": ["cats", "humor", "animals"],
     "author": "test001",
-    "imageUrl": "https://i.kym-cdn.com/entries/icons/original/000/045/575/blackcatzoningout_meme.jpg",
-    "likes": "",
-    "dislikes": ""
-  },
-  {
-    "id": "ea397b6f-3b87-469e-8ffd-41da2a6f13d3",
-    "name": "Rare Cat",
-    "categories": ["cats", "humor", "animals"],
-    "author": "test004",
-    "imageUrl": "https://i.kym-cdn.com/entries/icons/original/000/045/575/blackcatzoningout_meme.jpg",
-    "likes": "",
-    "dislikes": ""
-  },
-  {
-    "id": "85a1633e-9d61-4497-be97-f1b4b30c60b5",
-    "name": "gatito",
-    "categories": ["cats", "faces", "animals"],
-    "author": "test004",
-    "imageUrl": "https://i.kym-cdn.com/entries/icons/original/000/045/575/blackcatzoningout_meme.jpg",
-    "likes": "",
-    "dislikes": ""
-  },
-  {
-    "id": "6af55952-02ab-4aa0-95a9-01cdf50682b7",
-    "name": "michito",
-    "categories": ["cats", "faces", "animals"],
     "imageUrl": "https://i.kym-cdn.com/entries/icons/original/000/045/575/blackcatzoningout_meme.jpg",
     "likes": "",
     "dislikes": ""
