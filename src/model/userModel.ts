@@ -83,23 +83,22 @@ abstract class UserModel {
   }
 
   static async updateUser(userData: any) {
-    const {mail, username, password,interests, usernameParam} = userData;
-    
+    const { mail, username, password, interests, usernameParam } = userData;
+
     const userFound = this.findUser(usernameParam);
 
-    if(!userFound) return {error:"USER_NOT_FOUND!"}
+    if (!userFound) return { error: "USER_NOT_FOUND!" };
 
-    if(mail) userFound.mail = mail;
-    if(username) userFound.username = username;
-    if(password) userFound.password = password;
-    if(interests) userFound.interests = interests;
+    if (mail) userFound.mail = mail;
+    if (username) userFound.username = username;
+    if (password) userFound.password = password;
+    if (interests) userFound.interests = interests;
 
-    await this.writeDbUser()
+    await this.writeDbUser();
     return {
       message: "USER_UPDATE_SUCCESSFULLY",
-      user: {email: userFound.mail, username: userFound.username}
-    }
-
+      user: { email: userFound.mail, username: userFound.username },
+    };
   }
 
   static async logout(username: string) {

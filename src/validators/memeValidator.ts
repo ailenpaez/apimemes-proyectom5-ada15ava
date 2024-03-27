@@ -7,11 +7,11 @@ const memeSchema = z.object({
   author: z.string(),
   imageUrl: z.string(),
   likes: z.string(),
-  dislikes: z.string()
+  dislikes: z.string(),
 });
 
 const validateMeme = (obj: any) => memeSchema.safeParse(obj);
 
 const validatePartialMeme = (obj: any) => memeSchema.partial().safeParse(obj);
 
-export {validateMeme, validatePartialMeme};
+export { validateMeme, validatePartialMeme };
