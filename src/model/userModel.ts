@@ -41,7 +41,7 @@ abstract class UserModel {
   static async createNewUser(dataUser: any) {
     const { mail, username, hashedPass, interests } = dataUser;
 
-    const userInterests = interests ?? [];
+    const userInterests = interests ?? []; //OPERADOR DE NULIDAD ??
     const newUser = {
       mail,
       username,

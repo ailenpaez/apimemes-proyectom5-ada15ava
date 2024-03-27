@@ -9,7 +9,7 @@
     "dislikes": ""
   },
   {
-    "id":"2",
+    "id": "2",
     "name": "Meme de Café",
     "categories": ["Café", "Humor", "Día a día"],
     "author": "Usuario2",
@@ -23,6 +23,33 @@
     "categories": ["Animales", "Humor", "Gatos"],
     "author": "Usuario3",
     "imageUrl": "https://i.kym-cdn.com/entries/icons/mobile/000/045/575/blackcatzoningout_meme.jpg",
+    "likes": "",
+    "dislikes": ""
+  },
+  {
+    "id": "531a63ff-e3b2-46dd-a49e-241c0887774b",
+    "name": "Rare Cat",
+    "categories": ["cats", "humor", "animals"],
+    "author": "test001",
+    "imageUrl": "https://i.kym-cdn.com/entries/icons/original/000/045/575/blackcatzoningout_meme.jpg",
+    "likes": "",
+    "dislikes": ""
+  },
+  {
+    "id": "ea397b6f-3b87-469e-8ffd-41da2a6f13d3",
+    "name": "Rare Cat",
+    "categories": ["cats", "humor", "animals"],
+    "author": "test004",
+    "imageUrl": "https://i.kym-cdn.com/entries/icons/original/000/045/575/blackcatzoningout_meme.jpg",
+    "likes": "",
+    "dislikes": ""
+  },
+  {
+    "id": "85a1633e-9d61-4497-be97-f1b4b30c60b5",
+    "name": "Rare Cat",
+    "categories": ["cats", "humor", "animals"],
+    "author": "test004",
+    "imageUrl": "https://i.kym-cdn.com/entries/icons/original/000/045/575/blackcatzoningout_meme.jpg",
     "likes": "",
     "dislikes": ""
   }

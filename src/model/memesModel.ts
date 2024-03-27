@@ -34,6 +34,44 @@ abstract class MemesModel {
     const { likes, dislikes, ...shortInfo } = meme;
     return shortInfo;
   }
+
+  static async createNewMeme(dataMeme: any) {
+    const { id, name, categories, author, imageUrl, likes, dislikes } =
+      dataMeme;
+
+    const memeCategories = categories ?? [];
+
+    const newMeme = {
+      id,
+      name,
+      categories: memeCategories,
+      author,
+      imageUrl,
+      likes: "",
+      dislikes: "",
+    };
+
+    const meme = this.findMeme(name);
+
+    if (meme) return 409;
+    memes.push(newMeme);
+
+    await this.writeDbMemes();
+
+    return newMeme.name;
+  }
 }
 
 export { MemesModel };
+
+/*
+  {
+    "id": "",
+    "name": "",
+    "categories": [],
+    "author": "",
+    "imageUrl": "",
+    "likes": "",
+    "dislikes": ""
+  }
+ */

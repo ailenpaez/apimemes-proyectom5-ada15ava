@@ -1,5 +1,8 @@
 import { Request, Response } from "express";
 import { MemesModel } from "../model/memesModel";
+import { validateMeme, validatePartialMeme } from "../validators/memeValidator";
+import { randomUUID } from "crypto";
+import { validatorAuth } from "../middleware/auth";
 
 abstract class MemesController {
   public static getAllMemes = async (req: Request, res: Response) => {
@@ -16,6 +19,36 @@ abstract class MemesController {
       res.json(meme);
     }
   };
+
+  public static createNewMeme = [validatorAuth,async (req: Request, res: Response) => {
+      const validate = validateMeme(req.body);
+      if (!validate.success)
+        return res.status(400).json({ error: "BAD_REQUEST😓" });
+
+      const { name, categories, author, imageUrl } = req.body;
+
+      const generateId = randomUUID();
+
+      const newMeme = {
+        id: generateId,
+        name,
+        categories: categories ?? [],
+        imageUrl,
+        likes: "",
+        dislikes: "",
+      };
+
+      const response = await MemesModel.createNewMeme(newMeme);
+
+      if (response === 409) {
+        return res.status(409).json({ error: "THIS_MEME_EXISTS!🙈" });
+      }
+
+      res
+        .status(201)
+        .json({ message: "MEME_CREATED_SUCCESSFULLY!👏🏽", name: response });
+    },
+  ];
 }
 
 export { MemesController };

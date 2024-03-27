@@ -4,14 +4,12 @@ import { UserController } from "../controller/userController";
 
 const usersRouter = Router();
 
-// users
-
-usersRouter.get("/", validatorAuth, UserController.getAllUsers); //! LISTO
-usersRouter.get("/:username", validatorAuth, UserController.readUserByUsername); //! LISTO
-usersRouter.post("/register", UserController.createNewUser); //! LISTO
-usersRouter.post("/login", UserController.login); //! LISTO
+usersRouter.get("/", validatorAuth, UserController.getAllUsers);
+usersRouter.get("/:username", validatorAuth, UserController.readUserByUsername);
+usersRouter.post("/register", UserController.createNewUser);
+usersRouter.post("/login", UserController.login);
 usersRouter.patch("/:username", validatorAuth, UserController.updateUser);
-usersRouter.delete("/logout", validatorAuth, UserController.logout); //^ LISTO
-usersRouter.delete("/:username", validatorAuth, UserController.deleteUser)
+usersRouter.delete("/logout", validatorAuth, UserController.logout);
+usersRouter.delete("/:username", validatorAuth, UserController.deleteUser);
 
 export default usersRouter;

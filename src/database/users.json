@@ -75,5 +75,33 @@
     "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
     "token": "ecda0680-3b50-40d3-a5fc-3cab1e6af87f",
     "interests": ["animales", "niños", "Humor"]
+  },
+  {
+    "mail": "test001@gmail.com",
+    "username": "test001",
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "token": "66d628c5-b3a3-475c-9470-22d94536f0d4",
+    "interests": ["animales", "niños", "Humor"]
+  },
+  {
+    "mail": "test002@gmail.com",
+    "username": "test002",
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "token": "",
+    "interests": ["animales", "niños", "Humor"]
+  },
+  {
+    "mail": "test001@gmail.com",
+    "username": "test004",
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "token": "36493c74-14d6-43df-a7f3-6545179a31d0",
+    "interests": ["animales", "niños", "Humor"]
+  },
+  {
+    "mail": "holaa@gmail.com",
+    "username": "test005",
+    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
+    "token": "332a8635-4ec3-4c4c-a259-cff098fbeffd",
+    "interests": ["animales", "niños", "Humor"]
   }
 ]
