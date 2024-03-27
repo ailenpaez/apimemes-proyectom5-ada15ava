@@ -24,6 +24,16 @@ abstract class MemesModel {
     });
     return mappedMemes;
   }
+
+  static async readMemeById(id: string) {
+    const meme = this.findMeme(id);
+
+    if (!meme) {
+      return { error: "MEME_NOT_FOUND🤷🏻!" };
+    }
+    const { likes, dislikes, ...shortInfo } = meme;
+    return shortInfo;
+  }
 }
 
 export { MemesModel };

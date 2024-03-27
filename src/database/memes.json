@@ -1,6 +1,6 @@
 [
   {
-    "id": "1",
+    "id": "10",
     "name": "Meme de Programación",
     "categories": ["Tecnología", "Programación", "Humor"],
     "author": "Usuario1",
@@ -9,7 +9,7 @@
     "dislikes": ""
   },
   {
-    "id":" 2",
+    "id":"2",
     "name": "Meme de Café",
     "categories": ["Café", "Humor", "Día a día"],
     "author": "Usuario2",
