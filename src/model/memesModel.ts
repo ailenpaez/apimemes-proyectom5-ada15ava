@@ -1,8 +1,6 @@
 import memes from "../database/memes.json";
 import { writeFile } from "jsonfile";
 import { dirname } from "../database/dirname";
-import crypto from "crypto";
-import jsonfile from "jsonfile";
 
 abstract class MemesModel {
   private static findMeme(id: string) {
