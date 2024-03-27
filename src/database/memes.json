@@ -46,9 +46,17 @@
   },
   {
     "id": "85a1633e-9d61-4497-be97-f1b4b30c60b5",
-    "name": "Rare Cat",
-    "categories": ["cats", "humor", "animals"],
+    "name": "gatito",
+    "categories": ["cats", "faces", "animals"],
     "author": "test004",
+    "imageUrl": "https://i.kym-cdn.com/entries/icons/original/000/045/575/blackcatzoningout_meme.jpg",
+    "likes": "",
+    "dislikes": ""
+  },
+  {
+    "id": "6af55952-02ab-4aa0-95a9-01cdf50682b7",
+    "name": "michito",
+    "categories": ["cats", "faces", "animals"],
     "imageUrl": "https://i.kym-cdn.com/entries/icons/original/000/045/575/blackcatzoningout_meme.jpg",
     "likes": "",
     "dislikes": ""

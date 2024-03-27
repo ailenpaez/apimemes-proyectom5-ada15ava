@@ -60,12 +60,31 @@ abstract class MemesModel {
 
     return newMeme.name;
   }
-}
 
+  static async updateMeme(memeData: any) {
+    const { name, categories, author, imageUrl, memesParams } = memeData;
+
+    const memeFound = this.findMeme(memesParams);
+
+    if (!memeFound) return { error: "MEME_NOT_FOUND!" };
+
+    if (name) memeFound.name = name;
+    if (categories) memeFound.categories = categories;
+    if (author) memeFound.author = author;
+    if (imageUrl) memeFound.imageUrl = imageUrl;
+
+    await this.writeDbMemes();
+    return {
+      message: "MEME_UPDATE_SUCCESSFULLY!",
+      user: { name: memeFound.name, imageUrl: memeFound.imageUrl },
+    };
+  }
+}
 export { MemesModel };
 
 /*
-  {
+{id,name,categories,author,imageUrl, likes, dislikes}
+  { 
     "id": "",
     "name": "",
     "categories": [],
