@@ -4,7 +4,7 @@ import { validatorAuth } from "../middleware/auth";
 
 const memesRouter = Router();
 
-memesRouter.get("/top5", MemesController.top5Memes); //!read agregado por mi para mostrar una tabla con top 5
+memesRouter.get("/top5", MemesController.top5Memes); //!read agregado por mi para top 5 de más likeados
 memesRouter.get("/", MemesController.getAllMemes); //read - getAllFigures - GET - ?province=Oshima -> "http:localhost:1234/api/figures?province=oshima"
 memesRouter.get("/:id", MemesController.readMemeById); // read - getFigureById - GET
 memesRouter.post("/", validatorAuth, MemesController.createNewMeme); // create - createFigure - POST - NECESITA LOGGEARSE
