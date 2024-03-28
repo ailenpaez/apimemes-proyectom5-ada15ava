@@ -38,6 +38,8 @@ abstract class MemesModel {
       dataMeme;
 
     const memeCategories = categories ?? [];
+    const likesArray = likes ?? [];
+    const dislikesArray = dislikes ?? [];
 
     const newMeme = {
       id,
@@ -45,8 +47,8 @@ abstract class MemesModel {
       categories: memeCategories,
       author,
       imageUrl,
-      likes: "",
-      dislikes: "",
+      likes: likesArray,
+      dislikes: dislikesArray,
     };
 
     const meme = this.findMeme(name);
@@ -60,7 +62,7 @@ abstract class MemesModel {
   }
 
   static async updateMeme(memeData: any) {
-    const { name, categories, author, imageUrl, memesParams } = memeData;
+    const { id, name, categories, author, imageUrl, memesParams } = memeData;
 
     const memeFound = this.findMeme(memesParams);
 
@@ -70,11 +72,12 @@ abstract class MemesModel {
     if (categories) memeFound.categories = categories;
     if (author) memeFound.author = author;
     if (imageUrl) memeFound.imageUrl = imageUrl;
+    if (id) memeFound.id = id;
 
     await this.writeDbMemes();
     return {
       message: "MEME_UPDATE_SUCCESSFULLY!",
-      user: { name: memeFound.name, imageUrl: memeFound.imageUrl },
+      user: { name: memeFound.name, imageUrl: memeFound.imageUrl, id: id },
     };
   }
 
@@ -88,6 +91,19 @@ abstract class MemesModel {
     await this.updateMemes(deleteMeme);
 
     return { message: "MEME_DELETED_SUCCESSFULLY!" };
+  }
+
+  static async top5Memes() {
+    const top5 = memes
+      .sort((a, b) => b.likes.length - a.likes.length)
+      .slice(0, 5);
+
+    const mappedTopMemes = top5.map((meme, index) => ({
+      rank: index + 1,
+      name: meme.name,
+      likes: meme.likes.length,
+    }));
+    return mappedTopMemes;
   }
 }
 export { MemesModel };

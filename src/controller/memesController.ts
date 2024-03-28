@@ -34,10 +34,11 @@ abstract class MemesController {
       const newMeme = {
         id: generateId,
         name,
+        author,
         categories: categories ?? [],
         imageUrl,
-        likes: "",
-        dislikes: "",
+        likes: [],
+        dislikes: [],
       };
 
       const response = await MemesModel.createNewMeme(newMeme);
@@ -48,7 +49,7 @@ abstract class MemesController {
 
       res
         .status(201)
-        .json({ message: "MEME_CREATED_SUCCESSFULLY!👏🏽", name: response });
+        .json({ message: "MEME_CREATED_SUCCESSFULLY!👏🏽", id:generateId , name: response });
     },
   ];
 
@@ -79,6 +80,12 @@ abstract class MemesController {
       res.status(200).json(response);
     },
   ];
+
+  public static top5Memes = async (req: Request, res: Response) => {
+    const top5Memes = await MemesModel.top5Memes();
+    res.json(top5Memes);
+   };
+
 }
 
 export { MemesController };

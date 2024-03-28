@@ -6,8 +6,8 @@ const memeSchema = z.object({
   categories: z.array(z.string()),
   author: z.string(),
   imageUrl: z.string(),
-  likes: z.string(),
-  dislikes: z.string(),
+  likes: z.array(z.string()), 
+  dislikes: z.array(z.string()),
 });
 
 const validateMeme = (obj: any) => memeSchema.safeParse(obj);
