@@ -6,7 +6,6 @@ import jsonfile from "jsonfile";
 
 abstract class UserModel {
   private static findUser(username: string) {
-    //case sensitive
     return users.find(
       (user) => user.username.toLowerCase() === username.toLowerCase()
     );

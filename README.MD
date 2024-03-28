@@ -11,5 +11,5 @@
 * DOCUMENTACIÓN OS EN NODEJS -> [Documentación nodeJS - OS.](https://nodejs.org/api/os.html)
 * INFO DE OS PARA UTILIZAR NETWORKINTERFACES -> [NetworkInterfaces os NodeJS](https://www.geeksforgeeks.org/node-js-os-networkinterfaces-method/)
 * DOCUMENTACIÓN DE ZOS -> [Documentacion npm zod.](https://www.npmjs.com/package/zod)
-
+* QUERY PARAMS -> [Implementación de Query Params en express.](https://keepcoding.io/blogque-significa-el-req-query-en-express-js/)
 ***
