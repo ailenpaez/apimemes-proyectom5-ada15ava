@@ -86,7 +86,7 @@ abstract class UserModel {
 
     const userFound = this.findUser(usernameParam);
 
-    if (!userFound) return { error: "USER_NOT_FOUND!" };
+    if (!userFound) return { error: "USER_NOT_FOUND😐!" };
 
     if (mail) userFound.mail = mail;
     if (username) userFound.username = username;
@@ -95,7 +95,7 @@ abstract class UserModel {
 
     await this.writeDbUser();
     return {
-      message: "USER_UPDATE_SUCCESSFULLY",
+      message: "USER_UPDATE_SUCCESSFULLY😸",
       user: { email: userFound.mail, username: userFound.username },
     };
   }
@@ -109,7 +109,7 @@ abstract class UserModel {
 
     await this.writeDbUser();
 
-    return { message: "USER_LOGOUT!" };
+    return { message: "USER_LOGOUT🖖🏽!" };
   }
 
   static async deleteUser(username: string) {
@@ -121,7 +121,7 @@ abstract class UserModel {
 
     await this.updateUsers(deleteUser);
 
-    return { message: "USER_DELETED_SUCCESSFULLY!" };
+    return { message: "USER_DELETED_SUCCESSFULLY✂️!" };
   }
 }
 

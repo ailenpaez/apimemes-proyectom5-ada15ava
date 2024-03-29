@@ -63,7 +63,7 @@ abstract class MemesModel {
 
     const memeFound = this.foundMeme(memesParams);
 
-    if (!memeFound) return { error: "MEME_NOT_FOUND!" };
+    if (!memeFound) return { error: "MEME_NOT_FOUND🙅🏻‍♂️!" };
 
     if (name) memeFound.name = name;
     if (categories) memeFound.categories = categories;
@@ -73,7 +73,7 @@ abstract class MemesModel {
 
     await this.writeDbMemes();
     return {
-      message: "MEME_UPDATE_SUCCESSFULLY!",
+      message: "MEME_UPDATE_SUCCESSFULLY💁🏼‍♂️!",
       user: { name: memeFound.name, imageUrl: memeFound.imageUrl, id: id },
     };
   }
@@ -87,18 +87,18 @@ abstract class MemesModel {
 
     await this.updateMemes(deleteMeme);
 
-    return { message: "MEME_DELETED_SUCCESSFULLY!" };
+    return { message: "MEME_DELETED_SUCCESSFULLY🙆🏽‍♀️!" };
   }
   
   static async addLike(id: string, username: string) {
     const meme = this.foundMeme(id);
-    if (!meme) return { error: "MEME_NOT_FOUND!" };
+    if (!meme) return { error: "MEME_NOT_FOUND🤦🏽‍♂️!" };
 
     const likes = meme.likes as string[];
 
     if (likes.includes(username)) {
       return {
-        message: "USER_ALREADY_LIKED",
+        message: "USER_ALREADY_LIKED🙆🏽‍♂️",
         username: username,
         likesCount: likes.length,
       };
@@ -108,7 +108,7 @@ abstract class MemesModel {
     await this.writeDbMemes();
 
     return {
-      message: "LIKED_MEME_SUCCESS!",
+      message: "LIKED_MEME_SUCCESS👍🏽!",
       username: username,
       likesCount: likes.length,
     };

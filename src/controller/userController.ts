@@ -25,7 +25,7 @@ abstract class UserController {
   public static createNewUser = async (req: Request, res: Response) => {
     const validate = validateUser(req.body);
     if (!validate.success)
-      return res.status(400).json({ error: "BAD_REQUEST" });
+      return res.status(400).json({ error: "BAD_REQUEST😒" });
 
     const { mail, username, password, interests } = req.body;
 
@@ -100,7 +100,7 @@ abstract class UserController {
 
     const result = await UserModel.logout(username);
     if (result === 404) {
-      return res.status(404).json({ error: "USER_NOT_FOUND" });
+      return res.status(404).json({ error: "USER_NOT_FOUND🤨" });
     }
 
     res.status(201).json(result);
