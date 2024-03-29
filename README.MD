@@ -1,7 +1,7 @@
 # Trabajo integrador del módulo 5 - Api Memes.
 
 
-![This is an alt text.](https://pbs.twimg.com/media/GJ0fdA3WAAA4EeZ?format=jpg&name=medium)
+![INTRO](https://pbs.twimg.com/media/GJ0_BOZXAAAuwVj?format=jpg&name=medium)
 
 ## Introducción:
 
@@ -48,7 +48,7 @@ Se proyectó la idea de hacer una red social, donde los usuarios puedan realizar
 
 ***
 ## ESQUEMA ERD PARA EL FLUJO DE FUNCIONAMIENTO DE LA API:
-![This is an alt text.](https://)
+![ERD]([https://](https://pbs.twimg.com/media/GJ0-leeX0AAWbNq?format=jpg&name=large))
 
 ***
 
