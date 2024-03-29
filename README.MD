@@ -46,6 +46,11 @@ Se proyectó la idea de hacer una red social, donde los usuarios puedan realizar
 * Mostrar un **ping** que muestre la información del servidor y su configuración.
 
 ***
+## ESQUEMA ERD PARA EL FLUJO DE FUNCIONAMIENTO DE LA API:
+![This is an alt text.](https://)
+
+***
+
 ### Fuentes ###
 
 * LINK PARA IMAGENES -> [Know Your Meme.](https://knowyourmeme.com/)
