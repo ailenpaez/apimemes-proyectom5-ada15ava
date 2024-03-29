@@ -10,6 +10,36 @@ Se crearon dos archivos JSON que almacenan datos de **usuarios** y otro para alm
 Se proyectó la idea de hacer una red social, donde los usuarios puedan **dar like**, **subir** y **borrar** un meme, **editar/modificar** los datos necesarios para crear un meme. Para estas acciones, ***es necesario tener una cuenta*** y luego loguearse con usuario y contraseña, esto administrará un ***token*** único para cada usuario y cada sesión iniciada que será fundamental para realizar las acciones que el usuario desee.
 
 ***
+
+### 📍 INSTRUCCIONES PARA EL USUARIO.
+
+🟢 Para los ***usuarios***, estas acciones requieren tener la sesión iniciada:
+
+* Para obtener toda la lista de usuarios.
+* Para obtener la información de un usuario en particular.
+* Para modificar los datos de mi propio usuario.
+* Para borrar mi usuario.
+* Para cerrar la sesión.
+
+🔴 En cambio, para estas dos acciones no hace falta iniciar sesión:
+
+* Registrar un usuario.
+* Hacer el *login* de una cuenta. Para esta acción **se requiere estar registrado**.
+
+🟢 Para realizar las siguientes modificaciones en ***memes***, se requiere tener la sesión iniciada:
+
+* Para crear un nuevo meme.
+* Para modificar los datos de un meme.
+* Para borrar un meme.
+* Para likear un meme.
+
+🔴 Acciones que se pueden realizar sin estar registrado o sin iniciar sesión:
+
+* Mostrar toda la lista de memes.
+* Buscar un meme por su ID.
+* Mostrar el top 5 de memes *más likeados*.
+
+***
 ### Fuentes ###
 
 * LINK PARA IMAGENES -> [Know Your Meme.](https://knowyourmeme.com/)
