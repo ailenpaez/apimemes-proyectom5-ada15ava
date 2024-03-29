@@ -1,12 +1,27 @@
 [
   {
+    "id": "6e9c15d4-fc58-4022-b222-4daf70b093a2",
+    "name": "Chams dog",
+    "categories": ["dogs", "humor", "animals"],
+    "author": "test005",
+    "imageUrl": "https://i.kym-cdn.com/entries/icons/original/000/045/575/blackcatzoningout_meme.jpg",
+    "likes": [
+      "",
+      "test001",
+      "mariana",
+      "carmela007",
+      "ivan",
+      "carmela07",
+      "caropardiaco"
+    ]
+  },
+  {
     "id": "2",
     "name": "Meme de Café",
     "categories": ["Café", "Humor", "Día a día"],
     "author": "Usuario2",
     "imageUrl": "https://i.kym-cdn.com/entries/icons/mobile/000/026/031/Screen_Shot_2018-04-27_at_11.43.10_AM.jpg",
-    "likes": "",
-    "dislikes": ""
+    "likes": [""]
   },
   {
     "id": "3",
@@ -14,8 +29,7 @@
     "categories": ["Animales", "Humor", "Gatos"],
     "author": "Usuario3",
     "imageUrl": "https://i.kym-cdn.com/entries/icons/mobile/000/045/575/blackcatzoningout_meme.jpg",
-    "likes": "",
-    "dislikes": ""
+    "likes": [""]
   },
   {
     "id": "531a63ff-e3b2-46dd-a49e-241c0887774b",
@@ -23,8 +37,7 @@
     "categories": ["cats", "humor", "animals"],
     "author": "test001",
     "imageUrl": "https://i.kym-cdn.com/entries/icons/original/000/045/575/blackcatzoningout_meme.jpg",
-    "likes": "",
-    "dislikes": ""
+    "likes": [""]
   },
   {
     "id": "f258c01f-38e8-4867-8ffb-66f9f16e27de",
@@ -32,8 +45,7 @@
     "categories": ["dogs", "humor", "animals"],
     "author": "test00",
     "imageUrl": "https://i.kym-cdn.com/entries/icons/original/000/045/575/blackcatzoningout_meme.jpg",
-    "likes": [],
-    "dislikes": []
+    "likes": [""]
   },
   {
     "id": "aaf05466-1dc1-4958-bcad-16175314971d",
@@ -41,16 +53,6 @@
     "categories": ["kids", "humor", "scenes"],
     "author": "test005",
     "imageUrl": "https://i.kym-cdn.com/entries/icons/original/000/045/575/blackcatzoningout_meme.jpg",
-    "likes": [],
-    "dislikes": []
-  },
-  {
-    "id": "6e9c15d4-fc58-4022-b222-4daf70b093a2",
-    "name": "Chams dog",
-    "categories": ["dogs", "humor", "animals"],
-    "author": "test005",
-    "imageUrl": "https://i.kym-cdn.com/entries/icons/original/000/045/575/blackcatzoningout_meme.jpg",
-    "likes": [],
-    "dislikes": []
+    "likes": [""]
   }
 ]

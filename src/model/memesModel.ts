@@ -3,7 +3,7 @@ import { writeFile } from "jsonfile";
 import { dirname } from "../database/dirname";
 
 abstract class MemesModel {
-  private static findMeme(id: string) {
+  private static foundMeme(id: string) {
     return memes.find((meme) => meme.id === id);
   }
 
@@ -17,29 +17,27 @@ abstract class MemesModel {
 
   static async getAllMemes() {
     const mappedMemes: any = memes.map((memes) => {
-      const { likes, dislikes, ...mappedMemes } = memes;
+      const { likes, ...mappedMemes } = memes;
       return mappedMemes;
     });
     return mappedMemes;
   }
 
   static async readMemeById(id: string) {
-    const meme = this.findMeme(id);
+    const meme = this.foundMeme(id);
 
     if (!meme) {
       return { error: "MEME_NOT_FOUND🤷🏻!" };
     }
-    const { likes, dislikes, ...shortInfo } = meme;
+    const { likes, ...shortInfo } = meme;
     return shortInfo;
   }
 
   static async createNewMeme(dataMeme: any) {
-    const { id, name, categories, author, imageUrl, likes, dislikes } =
-      dataMeme;
+    const { id, name, categories, author, imageUrl, likes } = dataMeme;
 
     const memeCategories = categories ?? [];
     const likesArray = likes ?? [];
-    const dislikesArray = dislikes ?? [];
 
     const newMeme = {
       id,
@@ -48,10 +46,9 @@ abstract class MemesModel {
       author,
       imageUrl,
       likes: likesArray,
-      dislikes: dislikesArray,
     };
 
-    const meme = this.findMeme(name);
+    const meme = this.foundMeme(name);
 
     if (meme) return 409;
     memes.push(newMeme);
@@ -64,7 +61,7 @@ abstract class MemesModel {
   static async updateMeme(memeData: any) {
     const { id, name, categories, author, imageUrl, memesParams } = memeData;
 
-    const memeFound = this.findMeme(memesParams);
+    const memeFound = this.foundMeme(memesParams);
 
     if (!memeFound) return { error: "MEME_NOT_FOUND!" };
 
@@ -82,7 +79,7 @@ abstract class MemesModel {
   }
 
   static async deleteMeme(id: string) {
-    const meme = this.findMeme(id);
+    const meme = this.foundMeme(id);
 
     if (!meme) return 404;
 
@@ -92,31 +89,42 @@ abstract class MemesModel {
 
     return { message: "MEME_DELETED_SUCCESSFULLY!" };
   }
+  
+  static async addLike(id: string, username: string) {
+    const meme = this.foundMeme(id);
+    if (!meme) return { error: "MEME_NOT_FOUND!" };
+
+    const likes = meme.likes as string[];
+
+    if (likes.includes(username)) {
+      return {
+        message: "USER_ALREADY_LIKED",
+        username: username,
+        likesCount: likes.length,
+      };
+    }
+
+    likes.push(username);
+    await this.writeDbMemes();
+
+    return {
+      message: "LIKED_MEME_SUCCESS!",
+      username: username,
+      likesCount: likes.length,
+    };
+  }
 
   static async top5Memes() {
     const top5 = memes
       .sort((a, b) => b.likes.length - a.likes.length)
       .slice(0, 5);
 
-    const mappedTopMemes = top5.map((meme, index) => ({
+    const mappedTop5Memes = top5.map((meme, index) => ({
       rank: index + 1,
       name: meme.name,
       likes: meme.likes.length,
     }));
-    return mappedTopMemes;
+    return mappedTop5Memes;
   }
 }
 export { MemesModel };
-
-/*
-{id,name,categories,author,imageUrl, likes, dislikes}
-  { 
-    "id": "",
-    "name": "",
-    "categories": [],
-    "author": "",
-    "imageUrl": "",
-    "likes": "",
-    "dislikes": ""
-  }
- */

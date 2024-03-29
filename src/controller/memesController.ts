@@ -49,7 +49,11 @@ abstract class MemesController {
 
       res
         .status(201)
-        .json({ message: "MEME_CREATED_SUCCESSFULLY!👏🏽", id:generateId , name: response });
+        .json({
+          message: "MEME_CREATED_SUCCESSFULLY!👏🏽",
+          id: generateId,
+          name: response,
+        });
     },
   ];
 
@@ -81,11 +85,23 @@ abstract class MemesController {
     },
   ];
 
+  public static addLike = [
+    validatorAuth,
+    async (req: Request, res: Response) => {
+      const { id } = req.params;
+      const { username } = req.body;
+
+      const response = await MemesModel.addLike(id, username);
+      if (response.error) return res.status(400).json(response);
+
+      res.status(200).json(response);
+    },
+  ];
+
   public static top5Memes = async (req: Request, res: Response) => {
     const top5Memes = await MemesModel.top5Memes();
     res.json(top5Memes);
-   };
-
+  };
 }
 
 export { MemesController };

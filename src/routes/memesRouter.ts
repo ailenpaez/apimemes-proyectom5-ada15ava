@@ -10,6 +10,8 @@ memesRouter.get("/:id", MemesController.readMemeById); // read - getFigureById -
 memesRouter.post("/", validatorAuth, MemesController.createNewMeme); // create - createFigure - POST - NECESITA LOGGEARSE
 memesRouter.patch("/:id", validatorAuth, MemesController.updateMeme); // update - updateFigure - PATCH - NECESITA LOGGEARSE
 memesRouter.delete("/:id", validatorAuth, MemesController.deleteMeme); // delete - deleteFigure - DELETE - NECESITA LOGGEARSE
+memesRouter.post("/:id/like", validatorAuth, MemesController.addLike);
+
 
 //VER COMO HACER LOS LIKES Y LOS DISLIKES
 export default memesRouter;
