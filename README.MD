@@ -39,6 +39,11 @@ Se proyectó la idea de hacer una red social, donde los usuarios puedan realizar
 * Buscar un meme por su ID.
 * Mostrar el top 5 de memes *más likeados*.
 
+#### 🟡 Otras acciones que se pueden realizar sin registro y sin iniciar sesión:
+
+* Mostrar la versión de la api.
+* Mostrar un **ping** que muestre la información del servidor y su configuración.
+
 ***
 ### Fuentes ###
 
