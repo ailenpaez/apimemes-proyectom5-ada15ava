@@ -60,8 +60,7 @@ Aquí se podrán apreciar los comandos de ejecución que se enviarán por consol
 
 ***
 ## 🔸ESQUEMA ERD PARA EL FLUJO DE FUNCIONAMIENTO DE LA API:
-![ERD]([https://](https://pbs.twimg.com/media/GJ0-leeX0AAWbNq?format=jpg&name=large))
-
+![ERD](https://pbs.twimg.com/media/GJ-aSn4WAAEGxef?format=jpg&name=large)
 ***
 
 ### 📋 <u> Fuentes y documentación: </u> ###
