@@ -1,9 +1,9 @@
-# Trabajo integrador del módulo 5 - Api Memes.
+# 🔰 Trabajo integrador del módulo 5 - Api Memes.
 
 
 ![INTRO](https://pbs.twimg.com/media/GJ0_BOZXAAAuwVj?format=jpg&name=medium)
 
-## Introducción:
+## 🔸Introducción:
 
 En este trabajo se construyó una api desde cero, usando distintas herramientas de *nodeJS*, *express* y otras dependencias como **zod**, **randomUUID** y encriptación de las contraseñas para brindar mayor seguridad.
 
@@ -12,6 +12,18 @@ Se crearon dos archivos JSON que almacenan datos de **usuarios** y otro para alm
 Se proyectó la idea de hacer una red social, donde los usuarios puedan realizar distintas acciones sobre los memes y los usuarios. Para ello ***es necesario tener una cuenta***, luego loguearse con usuario y contraseña. Esto les administrará un ***token*** único para cada usuario y cada sesión iniciada, que será fundamental para realizar las acciones que el usuario desee.
 
 ***
+
+## 📍EJECUCIÓN DEL SISTEMA:
+
+ Para ejecutar estos procesos, poder ver la información solicitada y realizar las distintas acciones del sistema, debemos levantar el servidor con un comando de node.
+Aquí se podrán apreciar los comandos de ejecución que se enviarán por consola:
+ 
+| COMANDO DE EJECUCIÓN | TIPO DE ACCESO      | 
+| -------------------- | :-----------------: | 
+| npm run start        | USUARIOS            |       
+| npm run dev          | DESARROLLADORES     |       
+| npm run build        | COMPILADO/PRODUCCIÓN|      
+
 
 ### 📍 INSTRUCCIONES PARA EL USUARIO.
 
@@ -47,18 +59,16 @@ Se proyectó la idea de hacer una red social, donde los usuarios puedan realizar
 * Mostrar un **ping** que muestre la información del servidor y su configuración.
 
 ***
-## ESQUEMA ERD PARA EL FLUJO DE FUNCIONAMIENTO DE LA API:
+## 🔸ESQUEMA ERD PARA EL FLUJO DE FUNCIONAMIENTO DE LA API:
 ![ERD]([https://](https://pbs.twimg.com/media/GJ0-leeX0AAWbNq?format=jpg&name=large))
 
 ***
 
-### Fuentes ###
+### 📋 <u> Fuentes y documentación: </u> ###
 
 * LINK PARA IMAGENES ➡️ [Know Your Meme.](https://knowyourmeme.com/)
 * EMOJIS PARA PERSONALIZAR LAS RESPONSES ➡️[Emojipedia.](https://emojipedia.org/)
 * VIDEO QUERYPARAMS ➡️ [Queryparams Express.](https://www.youtube.com/watch?v=--TQwiNIw28&t=315s)
-
-  <u> Documentación </u>
 * FORMATO DE UN PING ➡️ [Ping en una api.](https://www.dotcom-monitor.com/wiki/es/knowledge-base/api-ping/)
 * INFO PARA EL PING ➡️ [Ping con un IP.](https://kinsta.com/es/base-de-conocimiento/como-hacer-ping-a-una-direccion-ip/)
 * DOCUMENTACIÓN OS EN NODEJS ➡️ [Documentación nodeJS - OS.](https://nodejs.org/api/os.html)
