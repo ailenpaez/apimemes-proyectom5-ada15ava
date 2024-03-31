@@ -14,8 +14,7 @@ abstract class MemesController {
     const id = req.params.id;
     const response = await MemesModel.readMemeById(id);
     if (response.error) return res.status(404).json(response);
-      res.json(response.message);
-    
+    res.json(response.message);
   };
 
   public static createNewMeme = [
@@ -41,13 +40,14 @@ abstract class MemesController {
 
       const response = await MemesModel.createNewMeme(newMeme);
 
-      if (response.error) return res.status(409).json({ error: "THIS_MEME_EXISTS!🙈" });
+      if (response.error)
+        return res.status(409).json({ error: "THIS_MEME_EXISTS!🙈" });
 
       res.status(201).json({
-          message: "MEME_CREATED_SUCCESSFULLY!👏🏽",
-          id: generateId,
-          name: response,
-        });
+        message: "MEME_CREATED_SUCCESSFULLY!👏🏽",
+        id: generateId,
+        name: response,
+      });
     },
   ];
 
@@ -80,7 +80,7 @@ abstract class MemesController {
       res.status(200).json(response.message);
     },
   ];
-  
+
   public static addLike = [
     validatorAuth,
     async (req: Request, res: Response) => {
@@ -90,7 +90,7 @@ abstract class MemesController {
       const response = await MemesModel.addLike(id, username);
       if (response.error) return res.status(400).json(response);
 
-      res.status(200).json(response.message);
+      res.status(200).json(response);
     },
   ];
 

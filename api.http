@@ -71,3 +71,27 @@ DELETE  http://localhost:1947/api/users/logout
 Content-Type: application/json
 Authorization: fbbcacda-aa9a-4c37-8012-ceaaa44bd1e5
 
+### Obtener todos los memes:
+
+GET http://localhost:1947/api/memes
+
+### Obtener meme por ID:
+
+GET http://localhost:1947/api/memes/aaf05466-1dc1-4958-bcad-16175314971d
+
+### Crear un nuevo meme:
+POST 
+Content-Type: application/json
+
+### Modificar un meme:
+
+PATCH 
+Content-Type: application/json
+
+### Borrar un meme:
+
+DELETE 
+
+### Dar un like al meme:
+
+PATCH 
