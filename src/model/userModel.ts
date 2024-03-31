@@ -64,7 +64,7 @@ abstract class UserModel {
 
     const userFound = this.findUser(username);
 
-    if (!userFound) return 404;
+    if (!userFound) return { error: "USER_NOT_FOUND🤷🏻!" }
 
     const hashPassword = crypto
       .createHash("sha256")
