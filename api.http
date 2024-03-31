@@ -1,0 +1,73 @@
+# PRUEBAS API PARA MI SISTEMA - API MEMES
+
+### Api Info:
+
+GET http://localhost:1947/api/
+
+### Ping con OS-node:
+
+GET http://localhost:1947/api/ping
+
+### Búsqueda por usuario (requiere token):
+
+GET http://localhost:1947/api/users/USUARIO1
+Authorization: token123
+
+### Crear un usuario:
+
+POST http://localhost:1947/api/users/register
+Content-Type: application/json
+
+{
+"mail": "test001@gmail.com",
+"username": "test23",
+"password": "123456789",
+"token": "",
+"interests": ["animals", "kids", "comics"]
+}
+
+### Login de un usuario: (FUNCIONA BIEN CON POSTMAN)
+
+POST http://localhost:1947/api/users/login
+
+Content-Type: application/json
+
+{
+"username": "test23",
+"password": "123456789"
+}
+
+### Modificar un usuario: (FUNCIONA BIEN CON POSTMAN)
+
+PATCH http://localhost:1947/api/users/test23
+
+{ "username": "test23",
+"mail": "prueba@gmail.com"
+  }
+
+Content-Type: application/json
+
+Authorization: 0a218d95-f18a-40cc-b766-bcb3e341e6c4
+
+
+### Eliminar un usuario: (FUNCIONA BIEN CON POSTMAN)
+
+DELETE http://localhost:1947/api/users/test23
+
+{"username": "test23"}
+
+CONTENT-TYPE: application/json
+
+Authorization: 0a218d95-f18a-40cc-b766-bcb3e341e6c4
+
+### Logout de usuario:
+
+DELETE  http://localhost:1947/api/users/logout
+
+{
+   "username": "test005"
+  }
+
+Content-Type: application/json
+Authorization: fbbcacda-aa9a-4c37-8012-ceaaa44bd1e5
+
