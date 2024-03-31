@@ -18,21 +18,21 @@ abstract class MemesModel {
 
   static async getAllMemes(query: any) {
     const { author } = query;
-
+   
     if (author) {
-      const memesByAuthor = memes.filter((meme: any) => meme.author === author);
-      return memesByAuthor.map((meme: any) => {
-        const { likes, ...mappedMeme } = meme;
-        return mappedMeme;
-      });
+       const memesByAuthor = memes.filter((meme: any) => meme.author === author);
+       return memesByAuthor.map((meme: any) => {
+         const { likes, ...mappedMeme } = meme;
+         return mappedMeme;
+       });
     }
-
+   
     const mappedMemes: any = memes.map((meme: any) => {
-      const { likes, ...mappedMeme } = meme;
-      return mappedMeme;
+       const { likes, ...mappedMeme } = meme;
+       return mappedMeme;
     });
     return mappedMemes;
-  }
+   }
 
   static async readMemeById(id: string) {
     const meme = this.foundMeme(id);
@@ -124,15 +124,16 @@ abstract class MemesModel {
 
   static async top5Memes() {
     const top5 = memes
-      .sort((a, b) => b.likes.length - a.likes.length)
-      .slice(0, 5);
-
+       .sort((a, b) => b.likes.length - a.likes.length)
+       .slice(0, 5);
+   
     const mappedTop5Memes = top5.map((meme, index) => ({
-      rank: index + 1,
-      name: meme.name,
-      likes: meme.likes.length,
+       rank: index + 1,
+       name: meme.name,
+       likes: meme.likes.length,
     }));
-    return { message: mappedTop5Memes };
-  }
+    return { message: mappedTop5Memes }; 
+   }
+   
 }
 export { MemesModel };

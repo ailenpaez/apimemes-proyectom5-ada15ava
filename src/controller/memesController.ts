@@ -90,7 +90,7 @@ abstract class MemesController {
       const response = await MemesModel.addLike(id, username);
       if (response.error) return res.status(400).json(response);
 
-      res.status(200).json(response);
+      res.status(200).json(response.message);
     },
   ];
 
