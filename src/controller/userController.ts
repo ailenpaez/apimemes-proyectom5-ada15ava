@@ -14,12 +14,10 @@ abstract class UserController {
 
   public static readUserByUsername = async (req: Request, res: Response) => {
     const username = req.params.username;
-    const user = await UserModel.readUserByUsername(username);
-    if ("error" in user) {
-      res.status(404).json(user);
-    } else {
-      res.json(user);
-    }
+    const response = await UserModel.readUserByUsername(username);
+    if (response.error) return res.status(404).json(response);
+
+    res.json(response.message);
   };
 
   public static createNewUser = async (req: Request, res: Response) => {
@@ -41,9 +39,8 @@ abstract class UserController {
       interests,
     });
 
-    if (response === 409) {
+    if (response.error)
       return res.status(409).json({ error: "USER_EXSISTS👀!" });
-    }
 
     res
       .status(201)
@@ -58,17 +55,17 @@ abstract class UserController {
         .status(400)
         .json({ error: "USERNAME_OR_PASSWORD_INCORRECT!🚩" });
 
-    const userLogged = await UserModel.login(req.body);
+    const response = await UserModel.login(req.body);
 
-    if (userLogged === 400)
+    if (response.error)
       return res.status(400).json({ error: "BAD_REQUEST..👎🏽" });
 
-    if (userLogged === 404)
+    if (response.error)
       return res.status(400).json({ error: "NOT_FOUND_USER🤨" });
 
     res
       .status(201)
-      .json({ message: "USER_LOGGED_SUCCESSFULLY!👍🏽", token: userLogged })
+      .json({ message: "USER_LOGGED_SUCCESSFULLY!👍🏽", token: response.message })
       .end();
   };
 
@@ -99,9 +96,8 @@ abstract class UserController {
     const { username } = req.body;
 
     const result = await UserModel.logout(username);
-    if (result === 404) {
+    if (result.error)
       return res.status(404).json({ error: "USER_NOT_FOUND🤨" });
-    }
 
     res.status(201).json(result);
   }
@@ -111,6 +107,7 @@ abstract class UserController {
 
     const response = await UserModel.deleteUser(username);
 
+    if (response.error) return res.status(404).json(response);
     res.status(200).json(response);
   }
 }

@@ -70,13 +70,6 @@
     "interests": ["animales", "niños", "Humor"]
   },
   {
-    "mail": "alejandrojtelatnik@gmail.com",
-    "username": "aletela",
-    "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
-    "token": "ecda0680-3b50-40d3-a5fc-3cab1e6af87f",
-    "interests": ["animales", "niños", "Humor"]
-  },
-  {
     "mail": "test001@gmail.com",
     "username": "test001",
     "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
@@ -101,7 +94,7 @@
     "mail": "holaa@gmail.com",
     "username": "test005",
     "password": "ef797c8118f02dfb649607dd5d3f8c7623048c9c063d532cc95c5ed7a898a64f",
-    "token": "332a8635-4ec3-4c4c-a259-cff098fbeffd",
+    "token": "93af49ba-88e5-48fb-9010-96da90f742a3",
     "interests": ["animales", "niños", "Humor"]
   }
 ]

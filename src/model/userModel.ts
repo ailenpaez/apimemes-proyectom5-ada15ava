@@ -30,11 +30,10 @@ abstract class UserModel {
   static async readUserByUsername(username: string) {
     const user = this.findUser(username);
 
-    if (!user) {
-      return { error: "USER_NOT_FOUND🤷🏻!" };
-    }
+    if (!user) return { error: "USER_NOT_FOUND🤷🏻!" };
+    
     const { token, password, ...shortInfo } = user;
-    return shortInfo;
+    return {message: shortInfo};
   }
 
   static async createNewUser(dataUser: any) {
@@ -51,7 +50,7 @@ abstract class UserModel {
 
     const user = this.findUser(username);
 
-    if (user) return 409;
+    if (user) return {error: "USER_EXISTS"};
     users.push(newUser);
 
     await this.writeDbUser();
@@ -64,21 +63,21 @@ abstract class UserModel {
 
     const userFound = this.findUser(username);
 
-    if (!userFound) return { error: "USER_NOT_FOUND🤷🏻!" }
+    if (!userFound) return {error: "USER_ALREADY_EXISTS"};
 
     const hashPassword = crypto
       .createHash("sha256")
       .update(password)
       .digest("hex");
 
-    if (userFound.password !== hashPassword) return 400;
+    if (userFound.password !== hashPassword) return {error: "BAD_REQUEST"}
 
     const token = crypto.randomUUID();
 
     userFound.token = token;
     await this.writeDbUser();
 
-    return token;
+    return {message: token };
   }
 
   static async updateUser(userData: any) {
@@ -103,7 +102,7 @@ abstract class UserModel {
   static async logout(username: string) {
     const user = this.findUser(username);
 
-    if (!user) return 404;
+    if (!user) return {error: "USER_NOT_FOUND🤷🏻"};
 
     user.token = "";
 
@@ -115,7 +114,7 @@ abstract class UserModel {
   static async deleteUser(username: string) {
     const user = this.findUser(username);
 
-    if (!user) return 404;
+    if (!user) return {error: "USER_NOT_FOUND"};
 
     const deleteUser = users.filter((user) => user.username !== username);
 
