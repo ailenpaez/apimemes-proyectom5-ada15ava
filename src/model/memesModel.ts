@@ -1,6 +1,7 @@
 import memes from "../database/memes.json";
-import { writeFile } from "jsonfile";
+import { writeFile, readFile } from "jsonfile";
 import { dirname } from "../database/dirname";
+import jsonfile from "jsonfile";
 
 abstract class MemesModel {
   private static foundMeme(id: string) {
@@ -15,10 +16,20 @@ abstract class MemesModel {
     return writeFile(dirname + "/memes.json", updateOrDeleteMeme);
   }
 
-  static async getAllMemes() {
-    const mappedMemes: any = memes.map((memes) => {
-      const { likes, ...mappedMemes } = memes;
-      return mappedMemes;
+  static async getAllMemes(query: any) {
+    const { author } = query;
+
+    if (author) {
+      const memesByAuthor = memes.filter((meme: any) => meme.author === author);
+      return memesByAuthor.map((meme: any) => {
+        const { likes, ...mappedMeme } = meme;
+        return mappedMeme;
+      });
+    }
+
+    const mappedMemes: any = memes.map((meme: any) => {
+      const { likes, ...mappedMeme } = meme;
+      return mappedMeme;
     });
     return mappedMemes;
   }
@@ -28,7 +39,7 @@ abstract class MemesModel {
 
     if (!meme) return { error: "MEME_NOT_FOUND🤷🏻!" };
     const { likes, ...shortInfo } = meme;
-    return {message: shortInfo};
+    return { message: shortInfo };
   }
 
   static async createNewMeme(dataMeme: any) {
@@ -48,12 +59,12 @@ abstract class MemesModel {
 
     const meme = this.foundMeme(name);
 
-    if (meme) return {error: "THIS_MEME_EXISTS!"}
+    if (meme) return { error: "THIS_MEME_EXISTS!" };
     memes.push(newMeme);
 
     await this.writeDbMemes();
 
-    return {message: newMeme.name};
+    return { message: newMeme.name };
   }
 
   static async updateMeme(memeData: any) {
@@ -79,7 +90,7 @@ abstract class MemesModel {
   static async deleteMeme(id: string) {
     const meme = this.foundMeme(id);
 
-    if (!meme) return {error: "MEME_NOT_FOUND"};
+    if (!meme) return { error: "MEME_NOT_FOUND" };
 
     const deleteMeme = memes.filter((meme) => meme.id !== id);
 
@@ -87,20 +98,19 @@ abstract class MemesModel {
 
     return { message: "MEME_DELETED_SUCCESSFULLY🙆🏽‍♀️!" };
   }
-  
+
   static async addLike(id: string, username: string) {
     const meme = this.foundMeme(id);
     if (!meme) return { error: "MEME_NOT_FOUND🤦🏽‍♂️!" };
 
     const likes = meme.likes as string[];
 
-    if (likes.includes(username)) 
+    if (likes.includes(username))
       return {
         message: "USER_ALREADY_LIKED🙆🏽‍♂️",
         username: username,
         likesCount: likes.length,
       };
-    
 
     likes.push(username);
     await this.writeDbMemes();
@@ -122,7 +132,7 @@ abstract class MemesModel {
       name: meme.name,
       likes: meme.likes.length,
     }));
-    return {message: mappedTop5Memes};
+    return { message: mappedTop5Memes };
   }
 }
 export { MemesModel };

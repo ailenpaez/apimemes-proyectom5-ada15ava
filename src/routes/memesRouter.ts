@@ -4,8 +4,8 @@ import { validatorAuth } from "../middleware/auth";
 
 const memesRouter = Router();
 
-memesRouter.get("/top5", MemesController.top5Memes); //!read agregado por mi para top 5 de más likeados
-memesRouter.get("/", MemesController.getAllMemes); 
+memesRouter.get("/top5", MemesController.top5Memes); 
+memesRouter.get("/", MemesController.getAllMemes); //queryParams
 memesRouter.get("/:id", MemesController.readMemeById); 
 memesRouter.post("/", validatorAuth, MemesController.createNewMeme); //validaor
 memesRouter.patch("/:id", validatorAuth, MemesController.updateMeme);  //validator
