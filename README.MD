@@ -59,7 +59,7 @@ Aquí se podrán apreciar los comandos de ejecución que se enviarán por consol
 * Mostrar un **ping** que muestre la información del servidor y su configuración.
 
 ***
-## 🔸ESQUEMA ERD PARA EL FLUJO DE FUNCIONAMIENTO DE LA API:
+## 🔸ERD PARA EL FLUJO DE FUNCIONAMIENTO DE LA API:
 ![ERD](https://pbs.twimg.com/media/GJ-aSn4WAAEGxef?format=jpg&name=large)
 ***
 
