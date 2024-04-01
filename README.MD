@@ -64,7 +64,7 @@ Los desarrolladores que deseen probar el sistema, deben contar con nodeJs y se i
 Al compilar con el comando, y ejecutar desde el sistema compilado mejora la calidad y la rapidez de las respuestas a las peticiones.
 
 ## 🔹 ERD PARA EL FLUJO DE FUNCIONAMIENTO DE LA API:
-![ERD](https://pbs.twimg.com/media/GJ-aSn4WAAEGxef?format=jpg&name=large)
+![ERD](https://pbs.twimg.com/media/GKEA9gSXQAAtbC-?format=jpg&name=large)
 
 ## 🔹 EJEMPLOS DE ENDPOINTS USADOS EN EL ARCHIVO 'api.http':
 ```
