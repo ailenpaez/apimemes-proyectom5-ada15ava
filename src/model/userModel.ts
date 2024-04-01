@@ -2,7 +2,6 @@ import users from "../database/users.json";
 import { writeFile } from "jsonfile";
 import crypto from "crypto";
 import { dirname } from "../database/dirname";
-import jsonfile from "jsonfile";
 
 abstract class UserModel {
   private static findUser(username: string) {
@@ -21,7 +20,7 @@ abstract class UserModel {
 
   static async getAllUsers() {
     const mappedUsers: any = users.map((users) => {
-      const { token, password, ...mappedUsers } = users; // destructuring, los ... -> operador de propagación (ADJUNTA PROP QUE SE)
+      const { token, password, ...mappedUsers } = users;
       return mappedUsers;
     });
     return mappedUsers;
@@ -31,15 +30,15 @@ abstract class UserModel {
     const user = this.findUser(username);
 
     if (!user) return { error: "USER_NOT_FOUND🤷🏻!" };
-    
+
     const { token, password, ...shortInfo } = user;
-    return {message: shortInfo};
+    return { message: shortInfo };
   }
 
   static async createNewUser(dataUser: any) {
     const { mail, username, hashedPass, interests } = dataUser;
 
-    const userInterests = interests ?? []; //OPERADOR DE NULIDAD ??
+    const userInterests = interests ?? [];
     const newUser = {
       mail,
       username,
@@ -50,7 +49,7 @@ abstract class UserModel {
 
     const user = this.findUser(username);
 
-    if (user) return {error: "USER_EXISTS"};
+    if (user) return { error: "USER_EXISTS" };
     users.push(newUser);
 
     await this.writeDbUser();
@@ -63,21 +62,21 @@ abstract class UserModel {
 
     const userFound = this.findUser(username);
 
-    if (!userFound) return {error: "USER_ALREADY_EXISTS"};
+    if (!userFound) return { error: "USER_ALREADY_EXISTS" };
 
     const hashPassword = crypto
       .createHash("sha256")
       .update(password)
       .digest("hex");
 
-    if (userFound.password !== hashPassword) return {error: "BAD_REQUEST"}
+    if (userFound.password !== hashPassword) return { error: "BAD_REQUEST" };
 
     const token = crypto.randomUUID();
 
     userFound.token = token;
     await this.writeDbUser();
 
-    return {message: token };
+    return { message: token };
   }
 
   static async updateUser(userData: any) {
@@ -102,7 +101,7 @@ abstract class UserModel {
   static async logout(username: string) {
     const user = this.findUser(username);
 
-    if (!user) return {error: "USER_NOT_FOUND🤷🏻"};
+    if (!user) return { error: "USER_NOT_FOUND🤷🏻" };
 
     user.token = "";
 
@@ -114,13 +113,13 @@ abstract class UserModel {
   static async deleteUser(username: string) {
     const user = this.findUser(username);
 
-    if (!user) return {error: "USER_NOT_FOUND"};
+    if (!user) return { error: "USER_NOT_FOUND" };
 
     const deleteUser = users.filter((user) => user.username !== username);
 
     await this.updateUsers(deleteUser);
 
-    return { message: "USER_DELETED_SUCCESSFULLY✂️!", username:username  };
+    return { message: "USER_DELETED_SUCCESSFULLY✂️!", username: username };
   }
 }
 

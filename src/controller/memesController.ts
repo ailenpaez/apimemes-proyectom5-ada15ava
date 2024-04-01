@@ -34,7 +34,7 @@ abstract class MemesController {
         author,
         categories: categories ?? [],
         imageUrl,
-        likes: [""]
+        likes: [""],
       };
 
       const response = await MemesModel.createNewMeme(newMeme);
