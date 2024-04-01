@@ -18,11 +18,11 @@ Se proyectó la idea de hacer una red social, donde los usuarios puedan realizar
  Para ejecutar estos procesos, poder ver la información solicitada y realizar las distintas acciones del sistema, debemos levantar el servidor con un comando de node.
 Aquí se podrán apreciar los comandos de ejecución que se enviarán por consola:
  
-| COMANDO DE EJECUCIÓN | TIPO DE ACCESO      | 
-| -------------------- | :-----------------: | 
-| npm run start        | USUARIOS            |       
-| npm run dev          | DESARROLLADORES     |       
-| npm run build        | COMPILADO/PRODUCCIÓN|      
+| COMANDO DE EJECUCIÓN |    TIPO DE ACCESO    |
+| -------------------- | :------------------: |
+| npm run start        |       USUARIOS       |
+| npm run dev          |   DESARROLLADORES    |
+| npm run build        | COMPILADO/PRODUCCIÓN |
 
 
 ### 📍 INSTRUCCIONES PARA EL USUARIO.
@@ -67,7 +67,142 @@ Al compilar con el comando, y ejecutar desde el sistema compilado mejora la cali
 ![ERD](https://pbs.twimg.com/media/GJ-aSn4WAAEGxef?format=jpg&name=large)
 
 ## 🔹 EJEMPLOS DE ENDPOINTS:
+```
+# PRUEBAS API PARA MI SISTEMA - API MEMES
 
+### Api Info:
+
+GET http://localhost:1947/api/
+
+### Ping con OS-node:
+
+GET http://localhost:1947/api/ping
+
+### Búsqueda por usuario (requiere token):
+
+GET http://localhost:1947/api/users/USUARIO1
+Authorization: token123
+
+### Crear un usuario:
+
+POST http://localhost:1947/api/users/register
+Content-Type: application/json
+
+{
+"mail": "test10@gmail.com",
+"username": "test10",
+"password": "123456789",
+"token": "",
+"interests": ["animals", "kids", "comics"]
+}
+
+### Login de un usuario: (FUNCIONA BIEN CON POSTMAN)
+
+POST http://localhost:1947/api/users/login
+Content-Type: application/json
+
+{
+"username": "test10",
+"password": "12345678"
+}
+
+### Modificar un usuario: (FUNCIONA BIEN CON POSTMAN)
+
+PATCH http://localhost:1947/api/users/test10
+Content-Type: application/json
+
+
+{ "username": "test10",
+  "mail": "prueba@gmail.com"
+  }
+
+
+Authorization: eca06d1d-a389-4313-a1e4-7d2abae07449
+
+
+### Eliminar un usuario: (FUNCIONA BIEN CON POSTMAN)
+
+DELETE http://localhost:1947/api/users/test10
+CONTENT-TYPE: application/json
+
+{"username": "test10"}
+
+Authorization: eca06d1d-a389-4313-a1e4-7d2abae07449
+
+### Logout de usuario: (FUNCIONA BIEN CON POSTMAN)
+
+DELETE  http://localhost:1947/api/users/logout
+Content-Type: application/json
+
+{
+   "username": "test001"
+  }
+
+Authorization: 66d628c5-b3a3-475c-9470-22d94536f0d4
+
+### Obtener todos los memes:
+
+GET http://localhost:1947/api/memes
+
+### Obtener memes por author, con query params:
+
+GET http://localhost:1947/api/memes/?author=test005
+
+### Obtener meme por ID:
+
+GET http://localhost:1947/api/memes/aaf05466-1dc1-4958-bcad-16175314971d
+
+### Crear un nuevo meme:(FUNCIONA BIEN CON POSTMAN)
+POST http://localhost:1947/api/memes/
+Content-Type: application/json
+
+{
+    "id": "",
+    "name": "ya wey",
+    "categories": ["girl", "humor", "scenes"],
+    "author": "test005",
+    "imageUrl": "https://i.kym-cdn.com/entries/icons/original/000/045/575/blackcatzoningout_meme.jpg",
+    "likes": [""]
+  }
+
+Authorization: fbbcacda-aa9a-4c37-8012-ceaaa44bd1e5
+
+
+### Modificar un meme:(FUNCIONA BIEN CON POSTMAN)
+
+PATCH http://localhost:1947/api/memes/4475e7ca-3a83-455c-90d9-8804e1d70dcc
+Content-Type: application/json
+ {
+     "id": "4475e7ca-3a83-455c-90d9-8804e1d70dcc",
+    "name": "michito",
+    "categories": ["cats", "faces", "animals"]
+      }
+
+Authorization: fbbcacda-aa9a-4c37-8012-ceaaa44bd1e5
+
+### Borrar un meme:(FUNCIONA BIEN CON POSTMAN)
+
+DELETE http://localhost:1947/api/memes/aaf05466-1dc1-4958-bcad-16175314971d
+Content-Type: application/json
+Authorization: fbbcacda-aa9a-4c37-8012-ceaaa44bd1e5
+
+
+### Dar un like al meme: (FUNCIONA BIEN CON POSTMAN)
+
+PATCH http://localhost:1947/api/memes/f258c01f-38e8-4867-8ffb-66f9f16e27de/like
+Content-Type: application/json
+
+{
+ "username": "laura55"
+}
+
+Authorization: 66d628c5-b3a3-475c-9470-22d94536f0d4
+
+### Mostrar top 5 de memes más likeados:
+
+GET http://localhost:1947/api/memes/top5
+
+```
 ***
 
 ### 📋 <u> Fuentes y documentación: </u> ###
