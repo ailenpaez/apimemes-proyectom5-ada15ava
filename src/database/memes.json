@@ -15,53 +15,5 @@
       "caropardiaco",
       "jamon"
     ]
-  },
-  {
-    "id": "2",
-    "name": "Meme de Café",
-    "categories": ["Café", "Humor", "Día a día"],
-    "author": "Usuario2",
-    "imageUrl": "https://i.kym-cdn.com/entries/icons/mobile/000/026/031/Screen_Shot_2018-04-27_at_11.43.10_AM.jpg",
-    "likes": [""]
-  },
-  {
-    "id": "3",
-    "name": "Meme de Gato",
-    "categories": ["Animales", "Humor", "Gatos"],
-    "author": "Usuario3",
-    "imageUrl": "https://i.kym-cdn.com/entries/icons/mobile/000/045/575/blackcatzoningout_meme.jpg",
-    "likes": [""]
-  },
-  {
-    "id": "531a63ff-e3b2-46dd-a49e-241c0887774b",
-    "name": "Rare Cat",
-    "categories": ["cats", "humor", "animals"],
-    "author": "test001",
-    "imageUrl": "https://i.kym-cdn.com/entries/icons/original/000/045/575/blackcatzoningout_meme.jpg",
-    "likes": [""]
-  },
-  {
-    "id": "f258c01f-38e8-4867-8ffb-66f9f16e27de",
-    "name": "happy dog",
-    "categories": ["dogs", "humor", "animals"],
-    "author": "test00",
-    "imageUrl": "https://i.kym-cdn.com/entries/icons/original/000/045/575/blackcatzoningout_meme.jpg",
-    "likes": [""]
-  },
-  {
-    "id": "aaf05466-1dc1-4958-bcad-16175314971d",
-    "name": "fire child",
-    "categories": ["kids", "humor", "scenes"],
-    "author": "test005",
-    "imageUrl": "https://i.kym-cdn.com/entries/icons/original/000/045/575/blackcatzoningout_meme.jpg",
-    "likes": [""]
-  },
-  {
-    "id": "2829d71d-73d9-41a2-ac2d-b90ffe9b7e52",
-    "name": "ya wey",
-    "categories": ["girl", "humor", "scenes"],
-    "author": "test005",
-    "imageUrl": "https://i.kym-cdn.com/entries/icons/original/000/045/575/blackcatzoningout_meme.jpg",
-    "likes": ["", "laura055"]
   }
 ]
