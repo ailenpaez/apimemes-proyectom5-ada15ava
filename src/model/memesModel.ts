@@ -96,7 +96,7 @@ abstract class MemesModel {
 
     await this.updateMemes(deleteMeme);
 
-    return { message: "MEME_DELETED_SUCCESSFULLY🙆🏽‍♀️!" };
+    return { message: "MEME_DELETED_SUCCESSFULLY🙆🏽‍♀️!", id:id};
   }
 
   static async addLike(id: string, username: string) {

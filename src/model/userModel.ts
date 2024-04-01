@@ -120,7 +120,7 @@ abstract class UserModel {
 
     await this.updateUsers(deleteUser);
 
-    return { message: "USER_DELETED_SUCCESSFULLY✂️!" };
+    return { message: "USER_DELETED_SUCCESSFULLY✂️!", username:username  };
   }
 }
 

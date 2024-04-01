@@ -77,7 +77,7 @@ abstract class MemesController {
 
       if (response.error) return res.status(404).json(response);
 
-      res.status(200).json(response.message);
+      res.status(200).json(response);
     },
   ];
 
@@ -90,7 +90,7 @@ abstract class MemesController {
       const response = await MemesModel.addLike(id, username);
       if (response.error) return res.status(400).json(response);
 
-      res.status(200).json(response.message);
+      res.status(200).json(response);
     },
   ];
 
