@@ -66,7 +66,7 @@ Al compilar con el comando, y ejecutar desde el sistema compilado mejora la cali
 ## 🔹 ERD PARA EL FLUJO DE FUNCIONAMIENTO DE LA API:
 ![ERD](https://pbs.twimg.com/media/GJ-aSn4WAAEGxef?format=jpg&name=large)
 
-## 🔹 EJEMPLOS DE ENDPOINTS:
+## 🔹 EJEMPLOS DE ENDPOINTS USADOS EN EL ARCHIVO 'api.http':
 ```
 # PRUEBAS API PARA MI SISTEMA - API MEMES
 
