@@ -2,7 +2,7 @@ import z from "zod";
 
 const memeSchema = z.object({
   id: z.string(),
-  name: z.string().min(6).max(10),
+  name: z.string().min(6).max(20),
   categories: z.array(z.string()),
   author: z.string(),
   imageUrl: z.string(),
