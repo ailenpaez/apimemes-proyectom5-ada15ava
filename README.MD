@@ -207,7 +207,8 @@ GET http://localhost:1947/api/memes/top5
 
 ### 📋 <u> Fuentes y documentación: </u> ###
 
-* LINK PARA IMAGENES ➡️ [Know Your Meme.](https://knowyourmeme.com/)
+* LINK PARA IMÁGENES ➡️ [Know Your Meme.](https://knowyourmeme.com/)
+* PINTEREST PARA IMÁGENES ➡️ [PINTEREST.](https://ar.pinterest.com/)
 * EMOJIS PARA PERSONALIZAR LAS RESPONSES ➡️[Emojipedia.](https://emojipedia.org/)
 * VIDEO QUERYPARAMS ➡️ [Queryparams Express.](https://www.youtube.com/watch?v=--TQwiNIw28&t=315s)
 * FORMATO DE UN PING ➡️ [Ping en una api.](https://www.dotcom-monitor.com/wiki/es/knowledge-base/api-ping/)
