@@ -1,9 +1,9 @@
-# 🔰 Trabajo integrador del módulo 5 - Api Memes.
+# 🔰 TRABAJO INTEGRADOR MÓDULO 5 | API MEMES.
 
 
 ![INTRO](https://pbs.twimg.com/media/GJ0_BOZXAAAuwVj?format=jpg&name=medium)
 
-## 🔸Introducción:
+## 🔸 INTRODUCCIÓN:
 
 En este trabajo se construyó una api desde cero, usando distintas herramientas de *nodeJS*, *express* y otras dependencias como **zod**, **randomUUID** y encriptación de las contraseñas para brindar mayor seguridad.
 
