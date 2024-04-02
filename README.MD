@@ -62,6 +62,7 @@ Aquí se podrán apreciar los comandos de ejecución que se enviarán por consol
 ## 🔹 NOTAS PARA DESARROLLADORES:
 Los desarrolladores que deseen probar el sistema, deben contar con nodeJs y se instelarán las dependecias adjuntas en el **packaje.json**. Se podrá hacer un PING con la herramienta OS de node, con el endpoint correspondiente. Aunque también el sistema ya tiene agregado otro ping para cada petición con la dependencia **Morgan**.
 Al compilar con el comando, y ejecutar desde el sistema compilado mejora la calidad y la rapidez de las respuestas a las peticiones.
+Por último, se agregó un archivo ***'testing-postman-apimemes.json'*** para pruebas en **POSTMAN**, que se puede importar para realizar las peticiones de prueba.
 
 ## 🔹 ERD PARA EL FLUJO DE FUNCIONAMIENTO DE LA API:
 ![ERD](https://pbs.twimg.com/media/GKEA9gSXQAAtbC-?format=jpg&name=large)
