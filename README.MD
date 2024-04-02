@@ -220,8 +220,8 @@ GET http://localhost:1947/api/memes/top5
 * QUERY PARAMS ➡️ [Implementación de Query Params en express.](https://keepcoding.io/blogque-significa-el-req-query-en-express-js/)
 * TIPOS DE ESQUEMAS ERD ➡️ [ERD Diagrams.](https://vertabelo.com/blog/vertabelo-tips-good-er-diagram-layout)
 * ERD tool ➡️ [ER diagram tool.](https://www.lucidchart.com/pages/landing/er-diagram-software?utm_source=google&utm_medium=cpc&utm_campaign=_chart_en_tier3_desktop_search_nb_exact-phrase_&km_CPC_CampaignId=2083826535&km_CPC_AdGroupID=76733733037&km_CPC_Keyword=erd%20diagram&km_CPC_MatchType=e&km_CPC_ExtensionID=&km_CPC_Network=g&km_CPC_AdPosition=&km_CPC_Creative=476146097723&km_CPC_TargetID=aud-812368091438:kwd-329821251308&km_CPC_Country=1000042&km_CPC_Device=c&km_CPC_placement=&km_CPC_target=&gad_source=1&gclid=Cj0KCQjwzZmwBhD8ARIsAH4v1gXSNc6olH2AAUk_HdJKkm-rIVuSEGnTdLLqwGBQ0cgij4Yl1YTLUecaAnEAEALw_wcB)
-* MODELO EJEMPLO ERD [ERD Example.](https://assets-global.website-files.com/62db30bc372ce21ab184bf7b/65e6077777c97133ca569d04_entity.png)
-* MODELO EJEMPLO ERD [ERD Example.](https://images.edrawsoft.com/articles/er-diagram-example/one-to-many-erd.png)
+* MODELO EJEMPLO ERD ➡️ [ERD Example.](https://assets-global.website-files.com/62db30bc372ce21ab184bf7b/65e6077777c97133ca569d04_entity.png)
+* MODELO EJEMPLO ERD ➡️ [ERD Example.](https://images.edrawsoft.com/articles/er-diagram-example/one-to-many-erd.png)
 ***
 
 - 📝Autor: Ailén Páez.
