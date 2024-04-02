@@ -4,6 +4,7 @@
   "country": "Argentina",
   "description": "API for managing memes and users, allowing CRUD operations on both types of data.",
   "paths": {
-    "info": "/api"
+    "info": "/api",
+    "ping": "/api/ping"
   }
 }
