@@ -24,8 +24,9 @@ Aquí se podrán apreciar los comandos de ejecución que se enviarán por consol
 | npm run dev          |   DESARROLLADORES    |
 | npm run build        | COMPILADO/PRODUCCIÓN |
 
+*** 
 
-### 📍 INSTRUCCIONES PARA EL USUARIO.
+## 📍 INSTRUCCIONES PARA EL USUARIO.
 
 #### 🟢 Para los ***usuarios***, estas acciones requieren tener la sesión iniciada:
 
